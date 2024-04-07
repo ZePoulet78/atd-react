@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Welcome from './components/Welcome';
+import PublicHeader from '@/components/Public/PublicHeader';
+import UserTable from '@/pages/Admin/UserTable';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
+import AuthRouter from '@/pages/Auth/AuthRouter';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PublicHeader/>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Welcome/>}/>
+          <Route path="/admin/users" element={<UserTable/>}/>
+          <Route path="/auth/*" element={<AuthRouter/>}/>
+        </Routes>
+      </BrowserRouter>
+      {/* <UserTable/> */}
     </div>
   );
 }
