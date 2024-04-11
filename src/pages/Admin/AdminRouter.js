@@ -41,12 +41,12 @@ const AdminRouter = () => {
 
                 </Route>
 
-                <Route path="formation">
+                {/* <Route path="formation">
                     <Route path="index" element={<Formation/>}/>
                     <Route path="edit/:id" element={<FormationEdit/>}/>
                     <Route path="add" element={<FormationAdd/>}/>
 
-                </Route>
+                </Route> */}
 
                 <Route path="stock">
                     <Route path="index" element={<Stock/>}/>
