@@ -1,19 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { userService } from '../../__service/user.service';
-import ky from 'ky';
+import {userService} from '@/__service/user.service';
 
 const UserTable = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await ky.get('http://localhost:8000/api/admin/users');
-        const data = await response.json();
-        console.log(data.user);
-        setUsers(data.user);
+        const users = await userService.getAllUsers();
+        setUsers(users);
         setLoading(false);
       } catch (err) {
         setError(err);
@@ -21,7 +17,7 @@ const UserTable = () => {
       }
     };
     fetchUsers();
-  }, []);
+    }, []);
 
   if (loading) {
     return <div>Chargement...</div>;

@@ -7,8 +7,8 @@ function PublicHeader(){
             <div className="container">
                 <div>
                     <Logo />   
-                    <HeaderButton>caca 1</HeaderButton>
-                    <HeaderButton>Bouton 2</HeaderButton>
+                    <HeaderButton>Rejoignez-Nous</HeaderButton>
+                    <HeaderButton>A Propos</HeaderButton>
                 </div>
                 <div className="navbar-nav ml-auto">
                     {/* <LogoutButton /> */}

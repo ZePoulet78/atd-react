@@ -1,3 +1,4 @@
+import React from "react";
 function UserProfile() {
     return (
       <div className="d-flex align-items-center mx-3">
