@@ -1,4 +1,5 @@
-import React, {Component} from "react";
+
+import React from "react";
 import {Logo, LogInButton, LogoutButton, HeaderButton, UserProfile} from "@/components/Public/header";
 
 function PublicHeader(){
@@ -7,8 +8,8 @@ function PublicHeader(){
             <div className="container">
                 <div>
                     <Logo />   
-                    <HeaderButton>Rejoignez-Nous</HeaderButton>
-                    <HeaderButton>A Propos</HeaderButton>
+                    <HeaderButton>Bouton</HeaderButton>
+                    <HeaderButton>Bouton 2</HeaderButton>
                 </div>
                 <div className="navbar-nav ml-auto">
                     {/* <LogoutButton /> */}

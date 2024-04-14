@@ -1,9 +1,9 @@
-import React from "react";
+
 function HeaderButton({ children }) {
     return (
       <a className="navbar-brand fs-6 text-light">
         {children}
-        {/* <style>
+        <style>
           {`
             .navbar-brand {
                 color: #FFFDFC;
@@ -11,7 +11,7 @@ function HeaderButton({ children }) {
                 padding: 0.5rem 1rem;
             }
           `}
-        </style> */}
+        </style>
       </a>
     );
   }
