@@ -21,10 +21,20 @@ let addUser = (user) => {
     return Axios.post('/admin/user', user)
 }
 
+let saveUser = (user) => {
+    localStorage.setItem('name', user.lastname);
+    localStorage.setItem('firstname', user.firstname);
+    localStorage.setItem('email', user.email);
+    localStorage.setItem('role', user.role);
+    localStorage.setItem('id', user.id);
+    localStorage.setItem('avatar', user.avatar);
+}
+
 export const userService = {
     getAllUsers,
     getUserById,
     updateUser,
     deleteUser,
-    addUser
+    addUser,
+    saveUser
 }

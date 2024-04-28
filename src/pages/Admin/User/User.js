@@ -7,26 +7,30 @@ import { Link } from 'react-router-dom';
 
 const User = () => {
   const [users, setUsers] = useState([]);
-
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-      
     userService.getAllUsers()
-        .then(res => {
-                setUsers(res.data.users)
-            })
-        .catch(err => console.log(err))
-    
-}, [])
-
-const delUser = (userId) => {
-  userService.deleteUser(userId)
       .then(res => {
-          
-          setUsers((current) => current.filter(user => user.id !== userId))
+        setUsers(res.data.users);
+        console.log(res.data.users);
       })
-      .catch(err => console.log(err))
-}
+      .catch(err => {
+        console.error(err);
+        setError(err.message || 'Une erreur s\'est produite');
+      });
+  }, []);
+
+  const delUser = (userId) => {
+    userService.deleteUser(userId)
+      .then(res => {
+        setUsers((current) => current.filter(user => user.id !== userId));
+      })
+      .catch(err => {
+        console.error(err);
+        setError(err.message || 'Une erreur s\'est produite');
+      });
+  }
 
 
 
@@ -38,6 +42,7 @@ const delUser = (userId) => {
     <div className="container mt-5">
       <h2>Gestion des Utilisateurs</h2>
       <Link to ="/admin/user/add/"><button className="btn btn-primary btn-sm">Ajouter</button></Link>
+      {error && <div className="alert alert-danger">{error}</div>} 
       <table className="table border rounded table-rounded">
         <thead>
           <tr>

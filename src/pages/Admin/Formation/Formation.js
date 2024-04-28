@@ -31,8 +31,12 @@ const delFormation = (formationId) => {
 
 
   if (!Array.isArray(formation) || formation.length === 0) {
-    return <div>Aucune donnée d'utilisateur à afficher.</div>;
-  }
+    return (
+      <div>
+          <div>Aucune donnée à afficher.</div>
+          <Link to ="/admin/formation/add/"><button className="btn btn-primary btn-sm">Ajouter</button></Link>
+      </div>
+    );  }
 
   return (
     <div className="container mt-5">

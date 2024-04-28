@@ -3,6 +3,8 @@ import React from "react";
 import {Logo, LogInButton, LogoutButton, HeaderButton, UserProfile} from "@/components/Public/header";
 
 function PublicHeader(){
+    
+
     return (
         <header className="navbar navbar-expand navbar-dark header py-3">
             <div className="container">
