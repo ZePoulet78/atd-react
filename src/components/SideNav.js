@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-
+import { FormattedMessage } from 'react-intl';
 
 import {
   Card,
@@ -37,7 +37,7 @@ const SideNav = () => {
           </ListItemPrefix>
       
         <Link to="/admin/user/index" className={`block px-4 py-2 font-medium ${isActive('/admin/user/index', location.pathname)}`}>
-          Utilisateurs
+          <FormattedMessage id="users" />
         </Link>
         </ListItem>
         
@@ -47,7 +47,7 @@ const SideNav = () => {
           </ListItemPrefix>
 
         <Link to="/admin/activity/index" className={`block px-4 py-2 font-medium ${isActive('/admin/activity/index', location.pathname)}`}>
-          Activité
+          <FormattedMessage id='activities' />
         </Link>
         </ListItem>
 
@@ -57,7 +57,7 @@ const SideNav = () => {
             <PresentationChartBarIcon className="h-5 w-5" />
           </ListItemPrefix>
         <Link to="/admin/formation/index" className={`block px-4 py-2 font-medium ${isActive('/admin/formation/index', location.pathname)}`}>
-          Formation
+          <FormattedMessage id='trainings' />
         </Link>
         </ListItem>
 
@@ -67,7 +67,7 @@ const SideNav = () => {
             <PresentationChartBarIcon className="h-5 w-5" />
           </ListItemPrefix>
         <Link to="/admin/stock/index" className={`block px-4 py-2 font-medium ${isActive('/admin/stock/index', location.pathname)}`}>
-          Stock
+          <FormattedMessage id='stocks' />
         </Link>
         </ListItem>
 
@@ -77,7 +77,7 @@ const SideNav = () => {
           </ListItemPrefix>
 
         <Link to="/admin/maraude/index" className={`block px-4 py-2 font-medium ${isActive('/admin/maraude/index', location.pathname)}`}>
-          Maraude
+          <FormattedMessage id='marauds' />
         </Link>
         </ListItem>
         </List>

@@ -3,6 +3,9 @@ import ky from 'ky';
 import { accountService } from '@/_service/account.service';
 import PublicHeader from '@/components/Public/PublicHeader';
 import { userService } from '@/_service/user.service';
+import { FormattedMessage } from 'react-intl'; // Ajout de l'import de FormattedMessage
+
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -38,10 +41,9 @@ const Login = () => {
   };
   return (
     <div>
-      <PublicHeader/>
       <div className="container d-flex justify-content-center align-items-center vh-100">
         <div className="card p-5 shadow-sm">
-          <h1 className="mb-4">Connexion</h1>
+          <h1 className="mb-4"><FormattedMessage id='login'></FormattedMessage></h1>
           {error && <div className="alert alert-danger">{error}</div>}
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
@@ -56,7 +58,7 @@ const Login = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="password" className="form-label">Mot de passe</label>
+              <label htmlFor="password" className="form-label"> <FormattedMessage id='password'></FormattedMessage></label>
               <input
                 type="password"
                 className="form-control"
