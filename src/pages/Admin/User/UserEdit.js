@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { userService } from '@/_service/user.service';
+import AssignRole from '../../Public1/ProfilePage/AssignRole';
 
 
 
@@ -44,6 +45,8 @@ const UserEdit = () => {
     }, [])
 
     return (
+      <div>
+      <div className='flex flex-row'>
         <div className="flex justify-center items-center h-screen bg-gray-100 dark:bg-gray-800">
           <div className="max-w-4xl w-full p-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg">
             <h2 className="text-center text-3xl font-bold mb-6 text-gray-800 dark:text-white">User Edit</h2>
@@ -109,9 +112,12 @@ const UserEdit = () => {
             </form>
           </div>
         </div>
-      );
-      
-      
+        <>
+            <AssignRole userId={user.id}/>
+        </>
+      </div>
+      </div>
+    );
 };
 
 export default UserEdit;

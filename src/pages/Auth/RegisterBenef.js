@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { accountService } from '@/_service/account.service';
 
-const Register = () => {
+const RegisterBenef = () => {
   const [error, setError] = useState('');
   const [file, setFile] = useState(null);
   const [formData, setFormData] = useState({
@@ -11,8 +11,8 @@ const Register = () => {
     tel: '',
     password: '',
     checkPassword: '',
-    role: 1,
-    isRegistered: 0,
+    role: 2,
+    isRegistered: 1,
   });
   const [status, setStatus] = useState('');
 
@@ -52,7 +52,7 @@ const Register = () => {
         <div className="row justify-content-center">
           <div className="col-md-6 card mt-5 w-75">
             <div className="register-form card-body">
-              <h2 className="text-center mb-4">Demande inscription</h2>
+              <h2 className="text-center mb-4">Inscription</h2>
               {error && <div className="alert alert-danger">{error}</div>}
               <form onSubmit={handleSubmit}>
                 <div className="d-flex flex-row justify-content-between">
@@ -165,4 +165,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterBenef;

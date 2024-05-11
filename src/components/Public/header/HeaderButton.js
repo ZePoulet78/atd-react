@@ -1,8 +1,8 @@
 import React from "react";
-function HeaderButton({ children }) {
+function HeaderButton(props) {
     return (
-      <a className="navbar-brand fs-6 text-light ml-5">
-        {children}
+      <a className="navbar-brand fs-6 text-light ml-5" href={props.href}>
+        {props.children}
         {/* <style>
           {`
             .navbar-brand {

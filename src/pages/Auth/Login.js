@@ -40,9 +40,9 @@ const Login = () => {
       else
         window.location.href = '/';
     } catch (err) {
-      const data = await err.json();
+      const data = await err;
       // console.log(data)
-      setError(err.message);
+      setError(data.message);
       console.log(err.message);
     }
   };

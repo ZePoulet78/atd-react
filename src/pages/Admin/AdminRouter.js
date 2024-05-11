@@ -18,7 +18,8 @@ import StockEdit from '@/pages/Admin/Stock/StockEdit.js';
 import Maraude from '@/pages/Admin/Maraude/Maraude.js';
 import MaraudeAdd from '@/pages/Admin/Maraude/MaraudeAdd.js';
 import MaraudeEdit from '@/pages/Admin/Maraude/MaraudeEdit.js';
-
+import Role from '@/pages/Admin/Roles/Role.js';
+import RoleAdd from '@/pages/Admin/Roles/RoleAdd.js';
 
 const AdminRouter = () => {
     return (
@@ -63,6 +64,11 @@ const AdminRouter = () => {
 
                 </Route>
 
+                <Route path='roles'>
+                    <Route path='index' element={<Role/>}/>
+                    {/* <Route path='edit/:id' element={<RoleEdit/>}/> */}
+                    <Route path='add' element={<RoleAdd/>}/>
+                </Route>
                 <Route path="*" element={<Error/>}/>
             </Route>
         </Routes>
