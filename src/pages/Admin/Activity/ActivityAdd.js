@@ -7,12 +7,13 @@ const ActivityAdd = () => {
     const [activity, setActivity] = useState([])
     let navigate = useNavigate()
 
-
+    console.log(activity)
     const onChange = (e) => {
         setActivity({
             ...activity,
             [e.target.name]: e.target.value
         })
+        console.log(activity)
     }
 
     const onSubmit = (e) => {

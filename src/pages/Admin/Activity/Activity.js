@@ -21,6 +21,14 @@ const Act = () => {
     
 }, [])
 
+const delAct = (actId) => {
+  activityService.deleteUser(actId)
+    .then(res => {
+      setActivity((current) => current.filter(activity => activity.id !== actId));
+    })
+    .catch(err => console.log(err));
+};
+
 
 
   if (!Array.isArray(activity) || activity.length === 0) {
@@ -53,8 +61,13 @@ const Act = () => {
               <td>{activity.description}</td>
               <td>
                 <button className="bi bi-eye"><img src="/eyes.svg"></img></button>
-                <button className="btn btn-primary btn-sm">Modifier</button>
-                <button className="btn btn-danger btn-sm">Supprimer</button>
+                <Link to ={`/admin/activity/edit/${activity.id}`}><button className="btn btn-primary btn-sm">Modifier</button></Link>
+                <button
+                        className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-3 md:px-4 rounded"
+                        onClick={() => delAct(activity.id)}
+                      >
+                        Supprimer
+                      </button>
               </td>
             </tr>
           ))}

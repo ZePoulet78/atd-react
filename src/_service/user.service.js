@@ -10,7 +10,12 @@ let getUserById = (id) => {
 }
 
 let updateUser = (user) => {
-    return Axios.patch('/admin/user/'+ user.id, user)
+    return Axios.patch('/admin/user/'+ user.id, user,{
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
 }
 
 let deleteUser = (id) => {

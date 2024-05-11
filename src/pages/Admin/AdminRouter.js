@@ -19,6 +19,7 @@ import Maraude from '@/pages/Admin/Maraude/Maraude.js';
 import MaraudeAdd from '@/pages/Admin/Maraude/MaraudeAdd.js';
 import MaraudeEdit from '@/pages/Admin/Maraude/MaraudeEdit.js';
 
+
 const AdminRouter = () => {
     return (
         <Routes>
@@ -41,12 +42,12 @@ const AdminRouter = () => {
 
                 </Route>
 
-                {/* <Route path="formation">
+                <Route path="formation">
                     <Route path="index" element={<Formation/>}/>
                     <Route path="edit/:id" element={<FormationEdit/>}/>
                     <Route path="add" element={<FormationAdd/>}/>
 
-                </Route> */}
+                </Route>
 
                 <Route path="stock">
                     <Route path="index" element={<Stock/>}/>

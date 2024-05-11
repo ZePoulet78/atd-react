@@ -23,7 +23,7 @@ const delFormation = (formationId) => {
   formationService.deleteFormation(formationId)
       .then(res => {
           
-          setFormation((current) => current.filter(formations => formation.id !== formationId))
+          setFormation((current) => current.filter(formation => formation.id !== formationId))
       })
       .catch(err => console.log(err))
 }
@@ -50,17 +50,20 @@ const delFormation = (formationId) => {
           </tr>
         </thead>
         <tbody>
-          {formation.map(user => (
-            <tr key={user.id}>
-              <th scope="row">{user.id}</th>
+          {formation.map(formation => (
+            <tr key={formation.id}>
+              <th scope="row">{formation.id}</th>
               <td>{formation.nom}</td>
+              <td>{formation.date_debut}</td>
+              <td>{formation.date_fin}</td>
               <td>{formation.time}</td>
               <td>{formation.but}</td>
               <td>{formation.description}</td>
+              <td>{formation.lieu}</td>
               <td>
                 <button className="bi bi-eye"><img src="/eyes.svg"></img></button>
-                <Link to ={`/admin/user/edit/${user.id}`}><button className="btn btn-primary btn-sm">Modifier</button></Link>
-                <button className="btn btn-danger btn-sm" onClick={() => delFormation(user.id)}>Supprimer</button>
+                <Link to ={`/admin/formation/edit/${formation.id}`}><button className="btn btn-primary btn-sm">Modifier</button></Link>
+                <button className="btn btn-danger btn-sm" onClick={() => delFormation(formation.id)}>Supprimer</button>
               </td>
             </tr>
           ))}
