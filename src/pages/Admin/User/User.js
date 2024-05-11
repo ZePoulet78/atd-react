@@ -40,8 +40,10 @@ const User = () => {
 
   return (
     <div className="container mt-5">
-      <h2>Gestion des Utilisateurs</h2>
-      <Link to ="/admin/user/add/"><button className="btn btn-primary btn-sm">Ajouter</button></Link>
+      <div className="d-flex justify-content-between mb-5">
+        <h2>Gestion des Utilisateurs</h2>
+        <Link to ="/admin/user/add/"><button className="btn btn-primary btn-sm">Ajouter</button></Link>
+      </div>
       {error && <div className="alert alert-danger">{error}</div>} 
       <table className="table border rounded table-rounded">
         <thead>
@@ -63,9 +65,10 @@ const User = () => {
               <td>{user.email}</td>
               <td>{user.tel}</td>
               <td>
-                <button className="bi bi-eye"><img src="/eyes.svg"></img></button>
+                <button className="bi bi-eye"><img src="/eyes.svg" alt='View Object'></img></button>
                 <Link to ={`/admin/user/edit/${user.id}`}><button className="btn btn-primary btn-sm">Modifier</button></Link>
                 <button className="btn btn-danger btn-sm" onClick={() => delUser(user.id)}>Supprimer</button>
+                <i class="bi bi-trash-fill"></i>
               </td>
             </tr>
           ))}

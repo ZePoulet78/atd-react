@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import ky from 'ky';
 import { accountService } from '@/_service/account.service';
-import PublicHeader from '@/components/Public/PublicHeader';
 import { userService } from '@/_service/user.service';
-import { FormattedMessage } from 'react-intl'; // Ajout de l'import de FormattedMessage
+import { FormattedMessage } from 'react-intl';
 
 
 const Login = () => {
@@ -31,12 +30,20 @@ const Login = () => {
       accountService.saveToken(data.authToken);
       userService.saveUser(data.user);
       console.log(data.user)
-      window.location.href = '/admin';
+
+      if(data.user.isRegsitered === 0){
+        window.location.href = '/user/';
+      }
+
+      if (data.user.role === 0)
+        window.location.href = '/admin';
+      else
+        window.location.href = '/';
     } catch (err) {
-      // const data = await err.response.json();
+      const data = await err.json();
       // console.log(data)
-      setError('Une erreur s\'est produite');
-      console.log(err);
+      setError(err.message);
+      console.log(err.message);
     }
   };
   return (
@@ -47,7 +54,7 @@ const Login = () => {
           {error && <div className="alert alert-danger">{error}</div>}
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">Email</label>
+              <label htmlFor="email" className="form-label"> <FormattedMessage id='email' /> </label>
               <input
                 type="email"
                 className="form-control"
@@ -68,12 +75,12 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="mb-3 form-check">
+            {/* <div className="mb-3 form-check">
               <input type="checkbox" className="form-check-input" id="rememberMe" />
-              <label className="form-check-label" htmlFor="rememberMe">Se souvenir de moi</label>
-            </div>
+              <label className="form-check-label" htmlFor="rememberMe"><FormattedMessage id='rememberMe' /></label>
+            </div> */}
             <div className="d-grid">
-              <button type="submit" className="btn btn-primary">Connexion</button>
+              <button type="submit" className="btn btn-primary"> <FormattedMessage id='login'/> </button>
             </div>
           </form>
         </div>
