@@ -32,7 +32,12 @@ const delAct = (actId) => {
 
 
   if (!Array.isArray(activity) || activity.length === 0) {
-    return <div>Aucune donnée à afficher.</div>;
+    return (
+      <div>
+          <div>Aucune donnée à afficher.</div>
+          <Link to ="/admin/activity/add/"><button className="btn btn-primary btn-sm">Ajouter</button></Link>
+      </div>
+    );
   }
 
   return (

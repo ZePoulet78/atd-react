@@ -8,13 +8,18 @@ import 'react-toastify/dist/ReactToastify.css';
 const User = () => {
   const [users, setUsers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     userService.getAllUsers()
       .then(res => {
         setUsers(res.data.users);
+        console.log(res.data.users);
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.error(err);
+        setError(err.message || 'Une erreur s\'est produite');
+      });
   }, []);
 
   const delUser = (userId) => {
@@ -22,8 +27,11 @@ const User = () => {
       .then(res => {
         setUsers((current) => current.filter(user => user.id !== userId));
       })
-      .catch(err => console.log(err));
-  };
+      .catch(err => {
+        console.error(err);
+        setError(err.message || 'Une erreur s\'est produite');
+      });
+  }
 
   const filteredUsers = users.filter(user =>
     user.lastname.toLowerCase().includes(searchTerm.toLowerCase()) ||

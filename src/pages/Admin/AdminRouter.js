@@ -1,14 +1,14 @@
 import React from 'react';
-import { Routes, Route } from "react-router-dom"
-import Error from '@/_utils/Error'
+import { Routes, Route } from "react-router-dom";
+import Error from '@/_utils/Error';
 
-import { ALayout} from '@/pages/Admin'
-import  User  from '@/pages/Admin/User/User.js'
-import  UserEdit  from '@/pages/Admin/User/UserEdit.js'
-import  UserAdd  from '@/pages/Admin/User/UserAdd.js'
-import  Activity  from '@/pages/Admin/Activity/Activity.js'
-import  ActivityAdd  from '@/pages/Admin/Activity/ActivityAdd.js'
-import  ActivityEdit  from '@/pages/Admin/Activity/ActivityEdit.js'
+import { ALayout} from '@/pages/Admin';
+import  User  from '@/pages/Admin/User/User.js';
+import  UserEdit  from '@/pages/Admin/User/UserEdit.js';
+import  UserAdd  from '@/pages/Admin/User/UserAdd.js';
+import  Activity  from '@/pages/Admin/Activity/Activity.js';
+import  ActivityAdd  from '@/pages/Admin/Activity/ActivityAdd.js';
+import  ActivityEdit  from '@/pages/Admin/Activity/ActivityEdit.js';
 import Formation from '@/pages/Admin/Formation/Formation.js';
 import FormationAdd from '@/pages/Admin/Formation/FormationAdd.js';
 import FormationEdit from '@/pages/Admin/Formation/FormationEdit.js';

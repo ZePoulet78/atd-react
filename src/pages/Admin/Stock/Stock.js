@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { stockService } from '@/_service/stock.service';
+import { Link } from 'react-router-dom';
 
 
 
@@ -21,12 +22,17 @@ const Stock = () => {
 
 
   if (!Array.isArray(stock) || stock.length === 0) {
-    return <div>Aucune donnée à afficher.</div>;
-  }
+    return (
+      <div>
+          <div>Aucune donnée à afficher.</div>
+          <Link to ="/admin/stock/add/"><button className="btn btn-primary btn-sm">Ajouter</button></Link>
+      </div>
+    );  }
 
   return (
     <div className="container mt-5">
       <h2>Gestion des Stocks</h2>
+      <Link to ="/admin/stock/add"><button className="btn btn-primary btn-sm">Ajouter</button></Link>
       <table className="table border rounded table-rounded">
         <thead>
           <tr>
