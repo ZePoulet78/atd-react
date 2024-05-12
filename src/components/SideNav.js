@@ -56,15 +56,24 @@ const SideNav = () => {
         </Link>
         </ListItem>
 
-        
         <ListItem>
+          <ListItemPrefix>
+            <PresentationChartBarIcon className="h-5 w-5" />
+          </ListItemPrefix>
+          <Link to="/admin/entrepot/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/entrepot/index', location.pathname)}`}>
+            <FormattedMessage id='entrepot' />
+          </Link>
+        </ListItem>
+
+        
+        {/* <ListItem>
           <ListItemPrefix>
             <PresentationChartBarIcon className="h-5 w-5" />
           </ListItemPrefix>
           <Link to="/admin/stock/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/stock/index', location.pathname)}`}>
             <FormattedMessage id='stocks' />
           </Link>
-        </ListItem>
+        </ListItem> */}
 
         <ListItem>
           <ListItemPrefix>
