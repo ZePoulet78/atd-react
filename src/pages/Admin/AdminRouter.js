@@ -12,14 +12,20 @@ import  ActivityEdit  from '@/pages/Admin/Activity/ActivityEdit.js';
 import Formation from '@/pages/Admin/Formation/Formation.js';
 import FormationAdd from '@/pages/Admin/Formation/FormationAdd.js';
 import FormationEdit from '@/pages/Admin/Formation/FormationEdit.js';
-import Stock from '@/pages/Admin/Stock/Stock.js';
-import StockAdd from '@/pages/Admin/Stock/StockAdd.js';
-import StockEdit from '@/pages/Admin/Stock/StockEdit.js';
+// import Stock from '@/pages/Admin/Stock/Stock.js';
+// import StockAdd from '@/pages/Admin/Stock/StockAdd.js';
+// import StockEdit from '@/pages/Admin/Stock/StockEdit.js';
 import Maraude from '@/pages/Admin/Maraude/Maraude.js';
 import MaraudeAdd from '@/pages/Admin/Maraude/MaraudeAdd.js';
 import MaraudeEdit from '@/pages/Admin/Maraude/MaraudeEdit.js';
 import Role from '@/pages/Admin/Roles/Role.js';
 import RoleAdd from '@/pages/Admin/Roles/RoleAdd.js';
+
+import Entrepot from '@/pages/Admin/Entrepot/Entrepot.js';
+import EntrepotAdd from '@/pages/Admin/Entrepot/EntrepotAdd.js';
+import EntrepotEdit from '@/pages/Admin/Entrepot/EntrepotEdit.js';
+import ProduitAdd from './Entrepot/ProduitAdd';
+import ProduitsByWarehouse from './Entrepot/ProduitByWarehouse';
 
 const AdminRouter = () => {
     return (
@@ -50,12 +56,21 @@ const AdminRouter = () => {
 
                 </Route>
 
-                <Route path="stock">
+                <Route path="entrepot">
+                    <Route path="index" element={<Entrepot/>}/>
+                    <Route path="edit/:id" element={<EntrepotEdit/>}/>
+                    <Route path="add" element={<EntrepotAdd/>}/>
+                    <Route path="prod/add/:id" element={<ProduitAdd/>}/>
+                    <Route path="prod/show/:id" element={<ProduitsByWarehouse/>}/>
+
+                </Route>
+
+                {/* <Route path="stock">
                     <Route path="index" element={<Stock/>}/>
                     <Route path="edit/:id" element={<StockEdit/>}/>
                     <Route path="add" element={<StockAdd/>}/>
 
-                </Route>
+                </Route> */}
 
                 <Route path="maraude">
                     <Route path="index" element={<Maraude/>}/>
