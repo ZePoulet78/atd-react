@@ -73,7 +73,7 @@ const Role = () => {
                         <button className="bg-gray-200 hover:bg-gray-300 text-gray-600 font-bold py-2 px-3 md:px-4 rounded">
                           <img src="/eyes.svg" alt="Voir" className="h-4 md:h-5 w-4 md:w-5 inline-block" />
                         </button>
-                        <Link to={`/admin/role/edit/${role.id}`}>
+                        <Link to={`/admin/roles/edit/${role.id}`}>
                           <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 md:px-4 rounded">
                             Modifier
                           </button>

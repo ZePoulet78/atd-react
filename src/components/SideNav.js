@@ -86,6 +86,15 @@ const SideNav = () => {
             <FormattedMessage id='roles' />
           </Link>
         </ListItem>
+        <ListItem>
+          <ListItemPrefix>
+            <PresentationChartBarIcon className="h-5 w-5" />
+          </ListItemPrefix>
+
+          <Link to="/admin/vehicle/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/maraude/index', location.pathname)}`}>
+            <FormattedMessage id='vehicles' />
+          </Link>
+        </ListItem>
         </List>
       </Card>
 

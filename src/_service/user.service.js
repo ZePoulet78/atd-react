@@ -10,6 +10,7 @@ let getUserById = (id) => {
 }
 
 let updateUser = (user) => {
+    console.log(user)
     return Axios.patch('/admin/user/'+ user.id, user,{
         headers: {
             'Content-Type': 'application/json',
@@ -35,11 +36,28 @@ let saveUser = (user) => {
     localStorage.setItem('avatar', user.avatar);
 }
 
+let getUserRoles = (id) => {
+    return Axios.get('/admin/user/'+id+'/role')
+}
+
+let deleteRole = (userId, roleId) => {
+    return Axios.delete('/admin/user/'+userId+'/role/'+roleId)
+}
+
+let assignRole = (userId, roleId) => {
+    return Axios.post('/admin/user/'+userId+'/role', {
+        role_id: roleId
+    })
+}
+
 export const userService = {
     getAllUsers,
     getUserById,
     updateUser,
     deleteUser,
     addUser,
-    saveUser
+    saveUser,
+    getUserRoles,
+    deleteRole,
+    assignRole
 }

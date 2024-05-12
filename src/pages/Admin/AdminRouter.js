@@ -20,6 +20,10 @@ import MaraudeAdd from '@/pages/Admin/Maraude/MaraudeAdd.js';
 import MaraudeEdit from '@/pages/Admin/Maraude/MaraudeEdit.js';
 import Role from '@/pages/Admin/Roles/Role.js';
 import RoleAdd from '@/pages/Admin/Roles/RoleAdd.js';
+import RoleEdit from '@/pages/Admin/Roles/RoleEdit.js';
+import Vehicle from '@/pages/Admin/Vehicle/Vehicle.js';
+import VehicleAdd from '@/pages/Admin/Vehicle/VehicleAdd';
+// import VehicleEdit from '@/pages/Admin/Vehicle/VehicleEdit';
 
 const AdminRouter = () => {
     return (
@@ -66,9 +70,16 @@ const AdminRouter = () => {
 
                 <Route path='roles'>
                     <Route path='index' element={<Role/>}/>
-                    {/* <Route path='edit/:id' element={<RoleEdit/>}/> */}
+                    <Route path='edit/:id' element={<RoleEdit/>}/>
                     <Route path='add' element={<RoleAdd/>}/>
                 </Route>
+
+                <Route path="vehicle">
+                    <Route path="index" element={<Vehicle/>}/>
+                    {/* <Route path="edit/:id" element={<VehicleEdit/>}/> */}
+                    <Route path="add" element={<VehicleAdd/>}/>
+                </Route>
+
                 <Route path="*" element={<Error/>}/>
             </Route>
         </Routes>
