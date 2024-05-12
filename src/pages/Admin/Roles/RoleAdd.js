@@ -1,41 +1,42 @@
-
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { roleService } from '@/_service/role.service';
-import AssignRole from '../../Public1/ProfilePage/AssignRole';
 
 const RoleAdd = () => {
-    const [user, setRole] = useState([])
-    let navigate = useNavigate()
-
+    const [role, setRole] = useState({
+        name: ''
+    });
+    let navigate = useNavigate();
 
     const onChange = (e) => {
         setRole({
-            ...user,
+            ...role,
             [e.target.name]: e.target.value
-        })
-    }
+        });
+    };
 
     const onSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
-        roleService.addRole(user)
+        roleService.addRole(role)
             .then(res => navigate('../index'))
-            .catch(err => console.log(err))
-    }
+            .catch(err => console.log(err));
+    };
 
     return (
-        <div className="RoleAdd">
-            Ajouter un rôle
-            <form onSubmit={onSubmit}>
-                <div className="group">
-                    <label htmlFor="name">Nom</label>
-                    <input type="text" name="name" onChange={onChange} />
+        <div className="container mt-4">
+            <div className="card">
+                <div className="card-body">
+                    <h2 className="card-title">Ajouter un rôle</h2>
+                    <form onSubmit={onSubmit}>
+                        <div className="mb-3">
+                            <label htmlFor="name" className="form-label">Nom</label>
+                            <input type="text" className="form-control" name="name" onChange={onChange} />
+                        </div>
+                        <button type="submit" className="btn btn-primary">Ajouter</button>
+                    </form>
                 </div>
-                <div className="group">
-                    <button>Ajouter</button>
-                </div>
-            </form>
+            </div>
         </div>
     );
 };

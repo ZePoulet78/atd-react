@@ -12,14 +12,15 @@ import  ActivityEdit  from '@/pages/Admin/Activity/ActivityEdit.js';
 import Formation from '@/pages/Admin/Formation/Formation.js';
 import FormationAdd from '@/pages/Admin/Formation/FormationAdd.js';
 import FormationEdit from '@/pages/Admin/Formation/FormationEdit.js';
-// import Stock from '@/pages/Admin/Stock/Stock.js';
-// import StockAdd from '@/pages/Admin/Stock/StockAdd.js';
-// import StockEdit from '@/pages/Admin/Stock/StockEdit.js';
 import Maraude from '@/pages/Admin/Maraude/Maraude.js';
 import MaraudeAdd from '@/pages/Admin/Maraude/MaraudeAdd.js';
 import MaraudeEdit from '@/pages/Admin/Maraude/MaraudeEdit.js';
 import Role from '@/pages/Admin/Roles/Role.js';
 import RoleAdd from '@/pages/Admin/Roles/RoleAdd.js';
+import RoleEdit from '@/pages/Admin/Roles/RoleEdit.js';
+import Vehicle from '@/pages/Admin/Vehicle/Vehicle.js';
+import VehicleAdd from '@/pages/Admin/Vehicle/VehicleAdd';
+import VehicleEdit from '@/pages/Admin/Vehicle/VehicleEdit';
 
 import Entrepot from '@/pages/Admin/Entrepot/Entrepot.js';
 import EntrepotAdd from '@/pages/Admin/Entrepot/EntrepotAdd.js';
@@ -30,6 +31,13 @@ import AddQuantityToProduct from './Entrepot/AddQuantityToProduct';
 import RemoveQuantityFromProduct from './Entrepot/RemoveQuantityToProduct';
 import RemoveProduct from './Entrepot/RemoveProduct';
 import Demand from '@/pages/Admin/Demand/Demand.js';
+
+
+import Collect from '@/pages/Admin/Collect/Collect.js';
+import CollectAdd from '@/pages/Admin/Collect/CollectAdd.js';
+import CollectEdit from '@/pages/Admin/Collect/CollectEdit.js';
+import RoadMap from '@/pages/Admin/Collect/RoadMap.js';
+
 
 
 const AdminRouter = () => {
@@ -88,13 +96,25 @@ const AdminRouter = () => {
 
                 <Route path='roles'>
                     <Route path='index' element={<Role/>}/>
-                    {/* <Route path='edit/:id' element={<RoleEdit/>}/> */}
+                    <Route path='edit/:id' element={<RoleEdit/>}/>
                     <Route path='add' element={<RoleAdd/>}/>
                 </Route>
 
                 <Route path="demand">
                     <Route path="index" element={<Demand/>}/>
+                </Route>
 
+                <Route path="vehicle">
+                    <Route path="index" element={<Vehicle/>}/>
+                    <Route path="edit/:id" element={<VehicleEdit/>}/>
+                    <Route path="add" element={<VehicleAdd/>}/>
+                </Route>
+
+                <Route path='collects'>
+                    <Route path='index' element={<Collect/>}/>
+                    <Route path='edit/:id' element={<CollectEdit/>}/>
+                    <Route path='add' element={<CollectAdd/>}/>
+                    <Route path='road/:id' element={<RoadMap/>}/>
                 </Route>
 
                 <Route path="*" element={<Error/>}/>

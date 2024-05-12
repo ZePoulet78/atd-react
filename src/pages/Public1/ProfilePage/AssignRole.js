@@ -1,21 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { roleService } from '@/_service/role.service';
+import { userService } from '@/_service/user.service';
 
 const AssignRole = ({ userId }) => {
   const [roles, setRoles] = useState([]);
   const [selectedRoleId, setSelectedRoleId] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchRoles = async () => {
-      try {
-        const response = await axios.get('/api/roles');
-        setRoles(response.data);
-      } catch (error) {
-        console.error('Erreur lors de la récupération des rôles :', error);
-      }
-    };
-
-    fetchRoles();
+    roleService
+      .indexRoles()
+      .then(res => {
+        setRoles(res.data.roles);
+        console.log("caca");
+        console.log(res.data.roles);
+        console.log("pipi");
+        console.log(res);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error(err);
+        setError(err.message || 'Une erreur s\'est produite');
+        setLoading(false);
+      });
   }, []);
 
   const handleRoleChange = (event) => {
@@ -24,15 +33,28 @@ const AssignRole = ({ userId }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    try {
-      await axios.post(`/api/users/${userId}/assign-role`, { role_id: selectedRoleId });
-      alert('Rôle assigné avec succès');
-    } catch (error) {
-      console.error('Erreur lors de l\'assignation du rôle :', error);
-      alert('Une erreur est survenue lors de l\'assignation du rôle');
-    }
+      userService.assignRole(userId, selectedRoleId)
+        .then(res => {
+          console.log(res);
+          window.location.href = '/admin/user';
+        })
+        .catch(err => {
+          console.error(err);
+          setError(err.message || 'Une erreur s\'est produite');
+        });
   };
+
+  // const assignRole = (userId, roleId) => {
+  //   return axios.post(`/api/admin/user/${userId}/role`, { role_id: roleId });
+  // };
+
+  if (loading) {
+    return <div>Chargement...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div>

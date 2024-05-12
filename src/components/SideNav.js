@@ -61,12 +61,12 @@ const SideNav = () => {
             <PresentationChartBarIcon className="h-5 w-5" />
           </ListItemPrefix>
           <Link to="/admin/entrepot/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/entrepot/index', location.pathname)}`}>
-            <FormattedMessage id='entrepot' />
+            <FormattedMessage id='warehouse' />
           </Link>
         </ListItem>
 
         
-        {/* <ListItem>
+    {/* <ListItem>
           <ListItemPrefix>
             <PresentationChartBarIcon className="h-5 w-5" />
           </ListItemPrefix>
@@ -104,6 +104,26 @@ const SideNav = () => {
 
           <Link to="/admin/roles/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/maraude/index', location.pathname)}`}>
             <FormattedMessage id='roles' />
+          </Link>
+        </ListItem>
+
+        <ListItem>
+          <ListItemPrefix>
+            <PresentationChartBarIcon className="h-5 w-5" />
+          </ListItemPrefix>
+
+          <Link to="/admin/vehicle/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/maraude/index', location.pathname)}`}>
+            <FormattedMessage id='vehicles' />
+          </Link>
+        </ListItem>
+
+        <ListItem>
+          <ListItemPrefix>
+            <PresentationChartBarIcon className="h-5 w-5" />
+          </ListItemPrefix>
+
+          <Link to="/admin/collects/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/maraude/index', location.pathname)}`}>
+            <FormattedMessage id='collects' />
           </Link>
         </ListItem>
         </List>
