@@ -9,11 +9,6 @@ import { FormattedMessage, IntlProvider } from 'react-intl';
 import transFR from './locales/fr.json';
 import transEN from './locales/en.json';
 import transTML from './locales/tml.json';
-import transES from './locales/es.json';
-import transPT from './locales/pt.json';
-import transCH from './locales/ch.json';
-import transARB from './locales/arb.json';
-
 
 import { useState } from 'react';
 import PublicHeader from '@/components/Public/PublicHeader';
@@ -24,11 +19,7 @@ import PublicRouter from './pages/Public1/PublicRouter';
 const messages = {
   fr: transFR,
   en: transEN,
-  tml: transTML,
-  es: transES,
-  pt: transPT,
-  arb: transARB,
-  ch: transCH,
+  tml: transTML
 };
 
 function App() {

@@ -15,75 +15,97 @@ import {
   UserCircleIcon,
 } from "@heroicons/react/24/solid";
 
-const SideNav = () => {
+const ProfileSideNav = () => {
   const location = useLocation();
+  const [openActivities, setOpenActivities] = useState(false);
 
   return (
     <Card className="h-auto w-64 p-4 shadow-xl">
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
           Menu
-          </Typography>
+        </Typography>
       </div>
       <List>
         <ListItem>
           <ListItemPrefix>
             <UserCircleIcon className="h-5 w-5" />
           </ListItemPrefix>
-      
-        <Link to="/admin/user/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/user/index', location.pathname)}`}>
-          <FormattedMessage id="users" />
-        </Link>
+          <Link
+            to="/profile"
+            className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive(
+              '/profile',
+              location.pathname
+            )}`}
+          >
+            <FormattedMessage id="profile" />
+          </Link>
         </ListItem>
-        
         <ListItem>
-        <ListItemPrefix>
+          <ListItemPrefix>
             <ShoppingBagIcon className="h-5 w-5" />
           </ListItemPrefix>
-
-        <Link to="/admin/activity/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/activity/index', location.pathname)}`}>
-          <FormattedMessage id='activities' />
-        </Link>
+          <Accordion
+            open={openActivities}
+            handleOpen={() => setOpenActivities(!openActivities)}
+          >
+            <AccordionHeader>
+              <FormattedMessage id="activities" />
+            </AccordionHeader>
+            <AccordionBody>
+              <List>
+                <ListItem>
+                  <Link
+                    to="/activities"
+                    className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive(
+                      '/activities',
+                      location.pathname
+                    )}`}
+                  >
+                    <FormattedMessage id="availableActivities" />
+                  </Link>
+                </ListItem>
+                <ListItem>
+                  <Link
+                    to="/activities/participating"
+                    className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive(
+                      '/activities/participating',
+                      location.pathname
+                    )}`}
+                  >
+                    <FormattedMessage id="participatingActivities" />
+                  </Link>
+                </ListItem>
+              </List>
+            </AccordionBody>
+          </Accordion>
         </ListItem>
-
-      
-        <ListItem>
-          <ListItemPrefix>
-            <PresentationChartBarIcon className="h-5 w-5" />
-          </ListItemPrefix>
-        <Link to="/admin/formation/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/formation/index', location.pathname)}`}>
-          <FormattedMessage id='trainings' />
-        </Link>
-        </ListItem>
-
-        
-        <ListItem>
-          <ListItemPrefix>
-            <PresentationChartBarIcon className="h-5 w-5" />
-          </ListItemPrefix>
-        <Link to="/admin/stock/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/stock/index', location.pathname)}`}>
-          <FormattedMessage id='stocks' />
-        </Link>
-        </ListItem>
-
-        <ListItem>
-          <ListItemPrefix>
-            <PresentationChartBarIcon className="h-5 w-5" />
-          </ListItemPrefix>
-
-        <Link to="/admin/maraude/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/maraude/index', location.pathname)}`}>
-          <FormattedMessage id='marauds' />
-        </Link>
-        </ListItem>
-        </List>
-      </Card>
-
+        {/* Autres onglets de la sidebar */}
+      </List>
+    </Card>
   );
-
 };
+
+// const ProfilePage = () => {
+//   return (
+//     <div>
+//       <SideNav />
+//       <div>
+//         <Typography variant="h4">
+//           <FormattedMessage id="profile" />
+//         </Typography>
+//         {/* Informations du profil */}
+//         <Button>
+//           <Cog6ToothIcon className="h-5 w-5 mr-2" />
+//           <FormattedMessage id="editProfile" />
+//         </Button>
+//       </div>
+//     </div>
+//   );
+// };
 
 const isActive = (expectedPath, currentPath) => {
   return expectedPath === currentPath ? 'text-blue-500' : '';
 };
 
-export default SideNav;
+export default ProfileSideNav;

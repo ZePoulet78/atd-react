@@ -22,10 +22,14 @@ let updateFormation = (formation) => {
     })
 }
 
-
 let deleteFormation = (id) => {
     return Axios.delete('/formations/'+id)
 }
+
+
+
+
+
 
 export const formationService = {
     getAllFormation,

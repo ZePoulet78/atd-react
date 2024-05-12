@@ -26,18 +26,15 @@ function PublicHeader() {
       <div className="container">
         <Logo />
         <div className="flex items-center gap-3">
-          <HeaderButton> <FormattedMessage id="about" /> </HeaderButton>
-          <HeaderButton><FormattedMessage id="join" /> </HeaderButton>
+          <HeaderButton href="/"> <FormattedMessage id="about" /> </HeaderButton>
+          <HeaderButton href="/auth/joinus"><FormattedMessage id="join" /> </HeaderButton>
+          <HeaderButton href="/auth/needhelp"><FormattedMessage id="needhelp" /> </HeaderButton>
         </div>
         <div className="navbar-nav ml-auto">
           <select className="blue border"  value={locale} onChange={handleLanguageChange}>
             <option value="fr">Français</option>
             <option value="en">English</option>
             <option value="tml">தமிழ்</option>
-            <option value="es">Español</option>
-            <option value="pt">Portugués</option>
-            <option value="ch">中国人</option>
-            <option value="arb">عرب</option>
           </select>
           {isLoggedIn ? (
             <>

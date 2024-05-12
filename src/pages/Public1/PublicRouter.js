@@ -7,10 +7,8 @@ import Home from './Home';
 const PublicRouter = () => {
     return (
         <Routes>
-
-            <Route path="/don" index element={<DonPage/>}/>
-
             <Route index element={<Home/>}/>
+            <Route path="/don" index element={<DonPage/>}/>
             <Route path="*" element={<Error/>}/>
         </Routes>
     );

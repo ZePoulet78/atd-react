@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { userService } from '@/_service/user.service';
+import AssignRole from '../../Public1/ProfilePage/AssignRole';
 
 const UserAdd = () => {
     const [user, setUser] = useState([])
@@ -29,7 +30,11 @@ const UserAdd = () => {
             <form onSubmit={onSubmit}>
                 <div className="group">
                     <label htmlFor="role">role</label>
-                    <input type="text" name="role" onChange={onChange} />
+                    <select name="role" onChange={onChange}>
+                        <option value="0">Admin</option>
+                        <option value="1">Bénévole</option>
+                        <option value="2">Bénéficiaire</option>
+                    </select>    
                 </div>
                 <div className="group">
                     <label htmlFor="lastname">Nom</label>
