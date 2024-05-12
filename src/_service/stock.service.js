@@ -13,8 +13,8 @@ let getProduitByWarehouseId = (warehouseId) => {
     return Axios.get(`/stock/warehouse/${warehouseId}`);
 }
 
-let RemoveQuantityFromStock = (produit) => {
-    return Axios.patch('/stock/del/'+ produit.id, produit,{
+let RemoveQuantityFromStock = (produitId, produit) => {
+    return Axios.put(`/stock/del/${produitId}`, produit,{
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -22,8 +22,8 @@ let RemoveQuantityFromStock = (produit) => {
     })
 }
 
-let addQuantityToStock = (produit) => {
-    return Axios.patch('/stock/add/'+ produit.id, produit,{
+let addQuantityToStock = (productId, produit) => {
+    return Axios.put(`/stock/add/${productId}`, produit,{
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -31,8 +31,8 @@ let addQuantityToStock = (produit) => {
     })
 }
 
-let removeProductFromWarehouse = (id) => {
-    return Axios.delete('/stock/'+id)
+let removeProductFromWarehouse = (produitId) => {
+    return Axios.delete(`/stock/${produitId}`)
 }
 
 let addProductToWarehouse = (warehouseId, produit) => {

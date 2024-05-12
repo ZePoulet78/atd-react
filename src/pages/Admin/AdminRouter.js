@@ -26,6 +26,11 @@ import EntrepotAdd from '@/pages/Admin/Entrepot/EntrepotAdd.js';
 import EntrepotEdit from '@/pages/Admin/Entrepot/EntrepotEdit.js';
 import ProduitAdd from './Entrepot/ProduitAdd';
 import ProduitsByWarehouse from './Entrepot/ProduitByWarehouse';
+import AddQuantityToProduct from './Entrepot/AddQuantityToProduct';
+import RemoveQuantityFromProduct from './Entrepot/RemoveQuantityToProduct';
+import RemoveProduct from './Entrepot/RemoveProduct';
+import Demand from '@/pages/Admin/Demand/Demand.js';
+
 
 const AdminRouter = () => {
     return (
@@ -61,8 +66,10 @@ const AdminRouter = () => {
                     <Route path="edit/:id" element={<EntrepotEdit/>}/>
                     <Route path="add" element={<EntrepotAdd/>}/>
                     <Route path="prod/add/:id" element={<ProduitAdd/>}/>
-                    <Route path="prod/show/:id" element={<ProduitsByWarehouse/>}/>
-
+                    <Route path="prod/show/:warehouseId" element={<ProduitsByWarehouse/>}/>
+                    <Route path="prod/add-quantity/:productId" element={<AddQuantityToProduct />} />
+                    <Route path="prod/remove-quantity/:productId" element={<RemoveQuantityFromProduct />} />
+                    <Route path="prod/remove/:productId" element={<RemoveProduct />} />
                 </Route>
 
                 {/* <Route path="stock">
@@ -84,6 +91,12 @@ const AdminRouter = () => {
                     {/* <Route path='edit/:id' element={<RoleEdit/>}/> */}
                     <Route path='add' element={<RoleAdd/>}/>
                 </Route>
+
+                <Route path="demand">
+                    <Route path="index" element={<Demand/>}/>
+
+                </Route>
+
                 <Route path="*" element={<Error/>}/>
             </Route>
         </Routes>

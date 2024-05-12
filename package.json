@@ -13,6 +13,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "craco": "^0.0.3",
+    "fullcalendar": "^6.1.11",
     "ky": "^1.2.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",

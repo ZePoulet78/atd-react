@@ -85,6 +85,17 @@ const SideNav = () => {
           </Link>
         </ListItem>
 
+        <ListItem>
+          <ListItemPrefix>
+            <PresentationChartBarIcon className="h-5 w-5" />
+          </ListItemPrefix>
+
+          <Link to="/admin/demand/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/demand/index', location.pathname)}`}>
+            <FormattedMessage id='demand' />
+          </Link>
+        </ListItem>
+        
+
         
         <ListItem>
           <ListItemPrefix>
@@ -97,6 +108,10 @@ const SideNav = () => {
         </ListItem>
         </List>
       </Card>
+
+      
+
+      
 
   );
 
