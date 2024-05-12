@@ -47,7 +47,7 @@ const Entrepots = () => {
     <div className="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">
       <div className="bg-white p-6 flex flex-col md:flex-row md:items-center">
         <div className="mb-4 md:mb-0 md:mr-6">
-          <h2 className="text-2xl font-bold mb-4 md:mb-0">Gestion des Utilisateurs</h2>
+          <h2 className="text-2xl font-bold mb-4 md:mb-0">Gestion des Entrepôts</h2>
           <input
             type="text"
             className="border border-gray-300 rounded py-2 px-4 w-full mb-4 md:mb-0"
@@ -61,9 +61,9 @@ const Entrepots = () => {
                 <tr className="bg-gray-100">
                   <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">#</th>
                   <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">Nom</th>
-                  <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">address</th>
-                  <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">actual_capacity</th>
-                  <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">max_capacity</th>
+                  <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">Adresse</th>
+                  <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">Capacité Actuelle</th>
+                  <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">Capacité Maximum</th>
                   <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">Actions</th>
                 </tr>
               </thead>

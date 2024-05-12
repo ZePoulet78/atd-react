@@ -1,65 +1,72 @@
-
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { userService } from '@/_service/user.service';
 import AssignRole from '../../Public1/ProfilePage/AssignRole';
 
 const UserAdd = () => {
-    const [user, setUser] = useState([])
-    let navigate = useNavigate()
-
+    const [user, setUser] = useState({
+        role: '',
+        lastname: '',
+        firstname: '',
+        tel: '',
+        email: '',
+        password: ''
+    });
+    let navigate = useNavigate();
 
     const onChange = (e) => {
         setUser({
             ...user,
             [e.target.name]: e.target.value
-        })
-    }
+        });
+    };
 
     const onSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         userService.addUser(user)
             .then(res => navigate('../index'))
-            .catch(err => console.log(err))
-    }
+            .catch(err => console.log(err));
+    };
 
     return (
-        <div className="UserEdit">
-            User Add
-            <form onSubmit={onSubmit}>
-                <div className="group">
-                    <label htmlFor="role">role</label>
-                    <select name="role" onChange={onChange}>
-                        <option value="0">Admin</option>
-                        <option value="1">Bénévole</option>
-                        <option value="2">Bénéficiaire</option>
-                    </select>    
+        <div className="container mt-4">
+            <div className="card">
+                <div className="card-body">
+                    <h2 className="card-title">User Add</h2>
+                    <form onSubmit={onSubmit}>
+                        <div className="mb-3">
+                            <label htmlFor="role" className="form-label">Role</label>
+                            <select className="form-select" name="role" onChange={onChange}>
+                                <option value="0">Admin</option>
+                                <option value="1">Bénévole</option>
+                                <option value="2">Bénéficiaire</option>
+                            </select>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="lastname" className="form-label">Nom</label>
+                            <input type="text" className="form-control" name="lastname" onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="firstname" className="form-label">Prénom</label>
+                            <input type="text" className="form-control" name="firstname" onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="tel" className="form-label">Tel</label>
+                            <input type="tel" className="form-control" name="tel" onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label">Email</label>
+                            <input type="email" className="form-control" name="email" onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="password" className="form-label">Mot de passe</label>
+                            <input type="password" className="form-control" name="password" onChange={onChange} />
+                        </div>
+                        <button type="submit" className="btn btn-primary">Ajouter</button>
+                    </form>
                 </div>
-                <div className="group">
-                    <label htmlFor="lastname">Nom</label>
-                    <input type="text" name="lastname" onChange={onChange} />
-                </div>
-                <div className="group">
-                    <label htmlFor="firstname">Prénom</label>
-                    <input type="text" name="firstname" onChange={onChange} />
-                </div>
-                <div className="group">
-                    <label htmlFor="tel">tel</label>
-                    <input type="tel" name="tel" onChange={onChange} />
-                </div>
-                <div className="group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" onChange={onChange} />
-                </div>
-                <div className="group">
-                    <label htmlFor="password">Mot de passe</label>
-                    <input type="password" name="password" onChange={onChange} />
-                </div>
-                <div className="group">
-                    <button>Ajouter</button>
-                </div>
-            </form>
+            </div>
         </div>
     );
 };

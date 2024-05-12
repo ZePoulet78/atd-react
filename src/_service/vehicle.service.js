@@ -1,15 +1,15 @@
 import Axios from './caller.service';
 
 let getAllVehicles = () => {
-    return Axios.get('/vehicles');
+    return Axios.get('/vehicules');
 }
 
 let getVehicleById = (id) => {
-    return Axios.get('/vehicle/'+id);
+    return Axios.get('/vehicules/'+id);
 }
 
 let updateVehicle = (vehicle) => {
-    return Axios.patch('/vehicle/'+ vehicle.id, vehicle,{
+    return Axios.patch('/vehicules/'+ vehicle.id, vehicle,{
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -18,11 +18,13 @@ let updateVehicle = (vehicle) => {
 }
 
 let deleteVehicle = (id) => {
-    return Axios.delete('/vehicle/'+id)
+    return Axios.delete('/vehicules/'+id)
 }
 
 let addVehicle = (vehicle) => {
-    return Axios.post('/vehicle', vehicle)
+    console.log(vehicle);
+
+    return Axios.post('/vehicules', vehicle)
 }
 
 export const vehicleService = {

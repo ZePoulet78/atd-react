@@ -50,6 +50,10 @@ let assignRole = (userId, roleId) => {
     })
 }
 
+let showUsersByRole = (role) => {
+    return Axios.get('/role/'+role)
+}
+
 export const userService = {
     getAllUsers,
     getUserById,
@@ -59,5 +63,6 @@ export const userService = {
     saveUser,
     getUserRoles,
     deleteRole,
-    assignRole
+    assignRole,
+    showUsersByRole
 }
