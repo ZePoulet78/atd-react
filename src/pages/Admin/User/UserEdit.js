@@ -88,16 +88,6 @@ const UserEdit = () => {
                   className="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 placeholder-gray-400 dark:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 dark:focus:ring-blue-500 focus:outline-none"
                 />
               </div>
-              <div className="mb-6">
-                <label htmlFor="password" className="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Mot de passe</label>
-                <input
-                  type="password"
-                  name="password"
-                  value={user.password}
-                  onChange={onChange}
-                  className="bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 placeholder-gray-400 dark:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 dark:focus:ring-blue-500 focus:outline-none"
-                />
-              </div>
               <div className="flex justify-center">
                 <button
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline text-lg"
