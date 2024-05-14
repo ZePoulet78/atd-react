@@ -22,7 +22,7 @@ let deleteAuthUserDocument = (id) => {
 }
 
 let destroyDocument = (id) => {
-    return Axios.delete('/admin/document/user/'+id)
+    return Axios.delete('/document/user/'+id)
 }
 
 let uploadDocument = (form) => {

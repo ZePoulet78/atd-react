@@ -25,9 +25,11 @@ const Pending = () => {
   };
 
   const deleteDocument = (idDocument) => {
-    demandService.deleteDocument(idDocument)
+    console.log(idDocument)
+    demandService.destroyDocument(idDocument)
       .then(() => {
         setDocuments(prevDocuments => prevDocuments.filter(document => document.id !== idDocument));
+
         toast.success('Document supprimé avec succès');
       })
       .catch(err => {

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { userService } from '@/_service/user.service';
 import { roleService } from '@/_service/role.service';
-import AssignRole from '../../Public1/ProfilePage/AssignRole';
+import AssignRole from '../../Public1/ProfilePages/AssignRole';
 
 const UserEdit = () => {
     const [user, setUser] = useState({

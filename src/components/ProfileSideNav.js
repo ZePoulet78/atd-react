@@ -80,7 +80,6 @@ const ProfileSideNav = () => {
             </AccordionBody>
           </Accordion>
         </ListItem>
-        {/* Autres onglets de la sidebar */}
       </List>
     </Card>
   );

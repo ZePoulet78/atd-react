@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { userService } from '@/_service/user.service';
-import AssignRole from '../../Public1/ProfilePage/AssignRole';
-
+    
 const UserAdd = () => {
     const [user, setUser] = useState({
         role: '',

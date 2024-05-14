@@ -1,11 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import SideNav from '@/components/SideNav.js'
-import PublicHeader from '@/components/Public/PublicHeader';
 
-
-
-// import Header from '@/components/admin/Header'
 
 
 const ALayout = () => {
