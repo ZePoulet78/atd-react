@@ -17,6 +17,7 @@ const Demand = () => {
     demandService.getAllDemand()
       .then(res => {
         setDemandes(res.data.user);
+        console.log(res.data)
       })
       .catch(err => {
         console.error(err);
@@ -86,7 +87,7 @@ const Demand = () => {
                     <td className="py-2 md:py-4 px-4 md:px-6">{demande.firstname}</td>
                     <td className="py-2 md:py-4 px-4 md:px-6">{demande.email}</td>
                     <td className="py-2 md:py-4 px-4 md:px-6 space-x-2">
-                      <Link to={`/demand/documents/${demande.id}`} >
+                      <Link to={`/admin/demand/documents/${demande.id}`} >
                       <button
                         className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 md:px-4 rounded"
                       >
