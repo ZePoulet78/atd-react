@@ -12,8 +12,15 @@ let approveUser = (user) => {
     return Axios.post('/admin/demand/a/' +user.id, user)
 }
 
+// get users document
+let getUsersDocuments = (id) => {
+    return Axios.get('/admin/documents/'+id);
+}
+
+
 export const demandService = {
     getAllDemand,
     deleteDemand,
-    approveUser
+    approveUser,
+    getUsersDocuments
 }

@@ -32,7 +32,6 @@ import RemoveQuantityFromProduct from './Entrepot/RemoveQuantityToProduct';
 import RemoveProduct from './Entrepot/RemoveProduct';
 import Demand from '@/pages/Admin/Demand/Demand.js';
 
-
 import Collect from '@/pages/Admin/Collect/Collect.js';
 import CollectAdd from '@/pages/Admin/Collect/CollectAdd.js';
 import CollectEdit from '@/pages/Admin/Collect/CollectEdit.js';
