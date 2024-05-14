@@ -43,20 +43,24 @@ const Demand = () => {
   };
 
   return (
-    <div>
-      <h2>Liste des demandes d'utilisateurs</h2>
-      {error && <div>Erreur : {error}</div>}
-      <ul>
+    <div className="container">
+      <h2 className="mt-4 mb-3">Liste des demandes d'utilisateurs</h2>
+      {error && <div className="alert alert-danger">Erreur : {error}</div>}
+      <div className="row">
         {demandes.map(demande => (
-          <li key={demande.id}>
-            <div>Nom : {demande.nom}</div>
-            <div>Email : {demande.email}</div>
-            <div>Autres informations...</div>
-            <button onClick={() => approuverDemande(demande)}>Approuver</button>
-            <button onClick={() => supprimerDemande(demande.id)}>Refuser</button>
-          </li>
+          <div className="col-md-4 mb-4" key={demande.id}>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">{demande.nom}</h5>
+                <p className="card-text">Email : {demande.email}</p>
+                {/* Ajoutez d'autres informations ici si nécessaire */}
+                <button className="btn btn-success mr-2" onClick={() => approuverDemande(demande)}>Approuver</button>
+                <button className="btn btn-danger" onClick={() => supprimerDemande(demande.id)}>Refuser</button>
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
