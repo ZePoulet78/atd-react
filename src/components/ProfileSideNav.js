@@ -86,24 +86,6 @@ const ProfileSideNav = () => {
   );
 };
 
-// const ProfilePage = () => {
-//   return (
-//     <div>
-//       <SideNav />
-//       <div>
-//         <Typography variant="h4">
-//           <FormattedMessage id="profile" />
-//         </Typography>
-//         {/* Informations du profil */}
-//         <Button>
-//           <Cog6ToothIcon className="h-5 w-5 mr-2" />
-//           <FormattedMessage id="editProfile" />
-//         </Button>
-//       </div>
-//     </div>
-//   );
-// };
-
 const isActive = (expectedPath, currentPath) => {
   return expectedPath === currentPath ? 'text-blue-500' : '';
 };

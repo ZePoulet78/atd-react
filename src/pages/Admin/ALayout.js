@@ -11,7 +11,6 @@ import PublicHeader from '@/components/Public/PublicHeader';
 const ALayout = () => {
     return (
         <div className="ALayout">
-            {/* <PublicHeader/> */}
             <div id="admin" className="flex h-screen">
                 <div className="bg-white shadow-md">
                     <SideNav/>

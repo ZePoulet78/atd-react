@@ -15,6 +15,7 @@ import PublicHeader from '@/components/Public/PublicHeader';
 import { LanguageContext } from '@/_helpers/LanguageProvider';
 // import { checkbox } from '@material-tailwind/react';
 import PublicRouter from './pages/Public1/PublicRouter';
+import ProfileRouter from '@/pages/Public1/ProfilePages/ProfileRouter'
 
 const messages = {
   fr: transFR,
@@ -43,6 +44,12 @@ function App() {
                     <AdminRouter />
                   </AuthProvider>
                 }
+              />
+              <Route
+              path='/profile/*'
+              element={
+                <ProfileRouter/>
+              }
               />
               <Route path='/auth/*' element={<AuthRouter />} />
               <Route path='/*' element={<PublicRouter />} />

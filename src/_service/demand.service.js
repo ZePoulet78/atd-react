@@ -25,6 +25,10 @@ let destroyDocument = (id) => {
     return Axios.delete('/admin/document/user/'+id)
 }
 
+let uploadDocument = (form) => {
+    return Axios.post('/document/upload', form)
+}
+
 
 export const demandService = {
     getAllDemand,
@@ -32,5 +36,6 @@ export const demandService = {
     approveUser,
     listDocument,
     deleteAuthUserDocument,
-    destroyDocument
+    destroyDocument,
+    uploadDocument
 }
