@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
@@ -8,6 +8,9 @@ import {
   List,
   ListItem,
   ListItemPrefix,
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
 } from "@material-tailwind/react";
 import {
   PresentationChartBarIcon,
@@ -18,6 +21,10 @@ import {
 const ProfileSideNav = () => {
   const location = useLocation();
   const [openActivities, setOpenActivities] = useState(false);
+
+  const handleOpen = () => {
+    setOpenActivities(!openActivities);
+  };
 
   return (
     <Card className="h-auto w-64 p-4 shadow-xl">
@@ -32,9 +39,9 @@ const ProfileSideNav = () => {
             <UserCircleIcon className="h-5 w-5" />
           </ListItemPrefix>
           <Link
-            to="/profile"
+            to="/profile/volunteer/user"
             className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive(
-              '/profile',
+              '/profile/volunteer/user',
               location.pathname
             )}`}
           >
@@ -45,11 +52,8 @@ const ProfileSideNav = () => {
           <ListItemPrefix>
             <ShoppingBagIcon className="h-5 w-5" />
           </ListItemPrefix>
-          <Accordion
-            open={openActivities}
-            handleOpen={() => setOpenActivities(!openActivities)}
-          >
-            <AccordionHeader>
+          <Accordion open={openActivities} onToggle={handleOpen}>
+            <AccordionHeader onClick={handleOpen}>
               <FormattedMessage id="activities" />
             </AccordionHeader>
             <AccordionBody>
@@ -86,7 +90,7 @@ const ProfileSideNav = () => {
 };
 
 const isActive = (expectedPath, currentPath) => {
-  return expectedPath === currentPath ? 'text-blue-500' : '';
+  return currentPath.startsWith(expectedPath) ? 'text-blue-500' : '';
 };
 
 export default ProfileSideNav;

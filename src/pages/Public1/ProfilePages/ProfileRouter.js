@@ -5,6 +5,7 @@ import Error from '@/_utils/Error';
 import Pending from './Pending/Pending';
 import Upload from './Pending/Upload';
 import VLayout from './VLayout';
+import BLayout from './BLayout';
 import UserProfile from './Volunteer/UserProfile';
 
 
