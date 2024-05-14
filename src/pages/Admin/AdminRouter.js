@@ -36,6 +36,7 @@ import Collect from '@/pages/Admin/Collect/Collect.js';
 import CollectAdd from '@/pages/Admin/Collect/CollectAdd.js';
 import CollectEdit from '@/pages/Admin/Collect/CollectEdit.js';
 import RoadMap from '@/pages/Admin/Collect/RoadMap.js';
+import ViewDocument from '@/pages/Admin/Demand/ViewDocument.js';
 
 
 
@@ -101,7 +102,10 @@ const AdminRouter = () => {
 
                 <Route path="demand">
                     <Route path="index" element={<Demand/>}/>
+                    <Route path="documents/:id" element={<ViewDocument/>}/>
                 </Route>
+
+
 
                 <Route path="vehicle">
                     <Route path="index" element={<Vehicle/>}/>
@@ -115,6 +119,7 @@ const AdminRouter = () => {
                     <Route path='add' element={<CollectAdd/>}/>
                     <Route path='road/:id' element={<RoadMap/>}/>
                 </Route>
+
 
                 <Route path="*" element={<Error/>}/>
             </Route>
