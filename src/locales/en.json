@@ -16,5 +16,7 @@
     "roles": "Roles",
     "vehicles": "Vehicles",
     "warehouse": "Warehouse",
-    "collects": "Collects"
+    "collects": "Collects",
+    "profile": "Profile",
+    "participatingActivities": "Participating Activities"
 }

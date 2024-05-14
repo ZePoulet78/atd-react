@@ -32,7 +32,7 @@ const Login = () => {
       console.log(data.user)
 
       if(data.user.isRegsitered === 0){
-        window.location.href = '/user/';
+        window.location.href = '/profile/pending';
       }
 
       if (data.user.role === 0)

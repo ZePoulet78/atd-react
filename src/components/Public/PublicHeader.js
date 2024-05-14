@@ -6,14 +6,22 @@ import { FormattedMessage } from "react-intl";
 function PublicHeader() {
   const { locale, changeLanguage } = useContext(LanguageContext);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false); 
 
   useEffect(() => {
-    // Vérifier la présence du token dans le localStorage
     const token = localStorage.getItem('token');
     if (token) {
       setIsLoggedIn(true);
+      
+      const role = localStorage.getItem('role');
+      if (role === '0') {
+        setIsAdmin(true);
+      } else {
+        setIsAdmin(false);
+      }
     } else {
       setIsLoggedIn(false);
+      setIsAdmin(false);
     }
   }, []);
 
@@ -29,6 +37,7 @@ function PublicHeader() {
           <HeaderButton href="/"> <FormattedMessage id="about" /> </HeaderButton>
           <HeaderButton href="/auth/joinus"><FormattedMessage id="join" /> </HeaderButton>
           <HeaderButton href="/auth/needhelp"><FormattedMessage id="needhelp" /> </HeaderButton>
+          {isAdmin && <HeaderButton href="/admin">Admin</HeaderButton>} {/* Ajouter le bouton Admin si l'utilisateur est admin */}
         </div>
         <div className="navbar-nav ml-auto">
           <select className="blue border"  value={locale} onChange={handleLanguageChange}>

@@ -1,17 +1,12 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import SideNav from '@/components/SideNav.js'
-import PublicHeader from '@/components/Public/PublicHeader';
 
-
-
-// import Header from '@/components/admin/Header'
 
 
 const ALayout = () => {
     return (
         <div className="ALayout">
-            {/* <PublicHeader/> */}
             <div id="admin" className="flex h-screen">
                 <div className="bg-white shadow-md">
                     <SideNav/>
