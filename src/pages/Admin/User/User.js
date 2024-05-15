@@ -103,10 +103,6 @@ const User = () => {
               Ajouter un utilisateur
             </button>
           </Link>
-          <div>
-            <button onClick={notify}>Notify!</button>
-            <ToastContainer />
-          </div>
         </div>
       </div>
     </div>

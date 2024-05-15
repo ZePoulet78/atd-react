@@ -72,9 +72,6 @@ const RoleEdit = () => {
             </form>
           </div>
         </div>
-        {/* <>
-            <AssignRole userId={user.id}/>
-        </> */}
       </div>
       </div>
     );

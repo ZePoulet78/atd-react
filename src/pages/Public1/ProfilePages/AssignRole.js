@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { roleService } from '@/_service/role.service';
 import { userService } from '@/_service/user.service';
 

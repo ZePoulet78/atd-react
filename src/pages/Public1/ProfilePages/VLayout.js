@@ -6,16 +6,16 @@ import PublicHeader from '@/components/Public/PublicHeader';
 
 const VLayout = () => {
     return (
-        <div className="VLayout">
-            <div id="admin" className="flex h-screen">
+        <>
+        <div className="VLayout flex h-screen">
                 <div className="bg-white shadow-md">
                     <ProfileSideNav/>
                 </div>
-                <div id="admin_body" className="flex-1 p-6">
+                <div id="admin_body" className="w-75">
                     <Outlet/>
                 </div>
-            </div>
         </div>
+        </>
     );
 };
 

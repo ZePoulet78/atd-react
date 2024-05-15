@@ -62,7 +62,7 @@ const Collect = () => {
                     <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">#</th>
                     <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">Date</th>
                     <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">Véhicule</th>
-                    <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">Utilisateur</th>
+                    <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">Chauffeur</th>
                     <th className="w-1/2 py-4 px-6 text-left text-gray-600 font-bold uppercase">Plan de route</th>
                     <th className="w-1/6 py-4 px-6 text-left text-gray-600 font-bold uppercase">Actions</th>
                   </tr>
@@ -72,8 +72,8 @@ const Collect = () => {
                     <tr key={collect.id} className="border-b border-gray-200">
                       <td className="py-2 md:py-4 px-4 md:px-6">{collect.id}</td>
                       <td className="py-2 md:py-4 px-4 md:px-6">{collect.date}</td>
-                      <td className="py-2 md:py-4 px-4 md:px-6">{collect.id_vehicule}</td>
-                      <td className="py-2 md:py-4 px-4 md:px-6">{collect.id_user}</td>
+                      <td className="py-2 md:py-4 px-4 md:px-6">{collect.vehicle.model} {collect.vehicle.year}</td>
+                      <td className="py-2 md:py-4 px-4 md:px-6">{collect.user.firstname} {collect.user.lastname}</td>
                       <td className="py-2 md:py-4 px-4 md:px-6">
                         {collect.plan_de_route? (
                           <a href={collect.plan_de_route} target="_blank" rel="noreferrer">

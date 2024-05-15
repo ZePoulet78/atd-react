@@ -18,5 +18,7 @@
     "warehouse": "Warehouse",
     "collects": "Collects",
     "profile": "Profile",
-    "participatingActivities": "Participating Activities"
+    "participatingActivities": "Participating Activities",
+    "availableActivities": "Available Activities",
+    "calendar": "Calendar"
 }

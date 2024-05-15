@@ -5,10 +5,11 @@ import AdminProvider from '@/_helpers/AdminProvider';
 import AuthRouter from './pages/Auth/AuthRouter';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { FormattedMessage, IntlProvider } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 import transFR from './locales/fr.json';
 import transEN from './locales/en.json';
 import transTML from './locales/tml.json';
+
 
 import { useState } from 'react';
 import PublicHeader from '@/components/Public/PublicHeader';

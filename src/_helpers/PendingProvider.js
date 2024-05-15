@@ -7,7 +7,7 @@ const PendingProvider = ({ children }) => {
 
   useEffect(() => {
     const checkAuth =  () => {
-      if (localStorage.getItem('isRegistered') === '0'){
+      if (localStorage.getItem('isRegistered') !== '0'){
         navigate('/', { replace: true });
       } else {
         setLoading(false);
