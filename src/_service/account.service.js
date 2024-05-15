@@ -21,6 +21,7 @@ let logout = () => {
     localStorage.removeItem('role');
     localStorage.removeItem('id');
     localStorage.removeItem('avatar');
+    localStorage.removeItem('isRegistered');
     window.location.href = '/auth';
 }
 

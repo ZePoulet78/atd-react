@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AdminRouter from '@/pages/Admin/AdminRouter';
-import AuthProvider from '@/_helpers/AuthProvider';
+import AdminProvider from '@/_helpers/AdminProvider';
 import AuthRouter from './pages/Auth/AuthRouter';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,7 +13,6 @@ import transTML from './locales/tml.json';
 import { useState } from 'react';
 import PublicHeader from '@/components/Public/PublicHeader';
 import { LanguageContext } from '@/_helpers/LanguageProvider';
-// import { checkbox } from '@material-tailwind/react';
 import PublicRouter from './pages/Public1/PublicRouter';
 import ProfileRouter from '@/pages/Public1/ProfilePages/ProfileRouter'
 
@@ -40,9 +39,9 @@ function App() {
               <Route
                 path="/admin/*"
                 element={
-                  <AuthProvider>
-                    <AdminRouter />
-                  </AuthProvider>
+                  <AdminProvider>
+                      <AdminRouter />
+                  </AdminProvider>
                 }
               />
               <Route

@@ -34,6 +34,7 @@ let saveUser = (user) => {
     localStorage.setItem('role', user.role);
     localStorage.setItem('id', user.id);
     localStorage.setItem('avatar', user.avatar);
+    localStorage.setItem('isRegistered', user.isRegistered);
 }
 
 let getUserRoles = (id) => {
