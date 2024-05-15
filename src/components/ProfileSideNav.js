@@ -49,9 +49,9 @@ const ProfileSideNav = () => {
           </Link>
         </ListItem>
         <ListItem>
-          <ListItemPrefix>
+          {/* <ListItemPrefix>
             <ShoppingBagIcon className="h-5 w-5" />
-          </ListItemPrefix>
+          </ListItemPrefix> */}
           <Accordion open={openActivities} onToggle={handleOpen}>
             <AccordionHeader onClick={handleOpen}>
               <FormattedMessage id="activities" />
@@ -60,7 +60,7 @@ const ProfileSideNav = () => {
               <List>
                 <ListItem>
                   <Link
-                    to="/activities"
+                    to="/profile/vulnteer/activities"
                     className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive(
                       '/activities',
                       location.pathname

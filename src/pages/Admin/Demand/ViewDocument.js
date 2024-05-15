@@ -17,8 +17,8 @@ const ViewDocument = () => {
   const chargerDocuments = () => {
     demandService.listDocument(id)
       .then(res => {
-        setDocuments(res.data['documents '] || []);
-        console.log(res.data['documents ']);
+        setDocuments(res.data['documents'] || []);
+        console.log(res.data['documents']);
       })
       .catch(err => {
         console.error(err);

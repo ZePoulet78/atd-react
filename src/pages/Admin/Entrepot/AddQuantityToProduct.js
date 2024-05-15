@@ -13,7 +13,7 @@ const AddQuantityToProduct = () => {
     const produit = { quantity: parseInt(quantity) };
     StockService.addQuantityToStock(productId, produit)
       .then(() => {
-        navigate('/admin/entrepot');
+        navigate('/admin/entrepot/index');
       })
       .catch(err => {
         console.error(err);

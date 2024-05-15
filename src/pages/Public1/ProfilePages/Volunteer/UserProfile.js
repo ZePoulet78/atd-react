@@ -10,8 +10,8 @@ const UserProfile = () => {
   });
 
   useEffect(() => {
-    userService.getUserInfo()
-      .then(userData => setUser(userData))
+    userService.getUserById(localStorage.getItem('id'))
+      .then(res => setUser(res.data.user))
       .catch(error => console.error('Erreur lors de la récupération des informations de l\'utilisateur :', error));
   }, []);
 

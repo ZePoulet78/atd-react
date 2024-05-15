@@ -111,10 +111,6 @@ const Entrepots = () => {
               Ajouter un entrepot
             </button>
           </Link>
-          <div>
-    <button onClick={notify}>Notify!</button>
-    <ToastContainer />
-    </div>
         </div>
       </div>
     </div>

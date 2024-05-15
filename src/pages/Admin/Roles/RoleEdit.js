@@ -49,7 +49,7 @@ const RoleEdit = () => {
       <div className='flex flex-row'>
         <div className="flex justify-center items-center h-screen bg-gray-100 dark:bg-gray-800">
           <div className="max-w-4xl w-full p-8 bg-white dark:bg-gray-900 rounded-lg shadow-lg">
-            <h2 className="text-center text-3xl font-bold mb-6 text-gray-800 dark:text-white">User Edit</h2>
+            <h2 className="text-center text-3xl font-bold mb-6 text-gray-800 dark:text-white">Modifier le Role</h2>
             <form onSubmit={onSubmit}>
               <div className="mb-6">
                 <label htmlFor="lastname" className="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Nom</label>

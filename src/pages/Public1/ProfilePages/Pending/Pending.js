@@ -16,7 +16,8 @@ const Pending = () => {
   const fetchDocuments = () => {
     demandService.listDocument(localStorage.getItem('id'))
       .then(res => {
-        setDocuments(res.data['documents '] || []);
+        setDocuments(res.data['documents'] || []);
+        console.log(res.data)
       })
       .catch(err => {
         console.error(err);
@@ -101,10 +102,6 @@ const Pending = () => {
               Ajouter un document
             </button>
           </Link>
-          <div>
-            <button onClick={() => toast("Notification!")}>Notify!</button>
-            <ToastContainer />
-          </div>
         </div>
       </div>
     </div>

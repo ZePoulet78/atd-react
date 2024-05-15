@@ -7,13 +7,14 @@ import Upload from './Pending/Upload';
 import VLayout from './VLayout';
 import BLayout from './BLayout';
 import UserProfile from './Volunteer/UserProfile';
-
+import IndexActivitites from './Volunteer/IndexActivities';
 
 const ProfileRouter = () => {
     return (
         <Routes>
             <Route path='/volunteer' element={<VLayout/>}>
                 <Route path='user' element={<UserProfile/>}/>
+                <Route path="activities" element={<IndexActivitites />} />
             </Route>
             <Route path="beneficiary"element={<BLayout/>}/>
             <Route path='pending' element={<Pending/>} />
