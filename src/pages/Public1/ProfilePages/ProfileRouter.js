@@ -17,6 +17,7 @@ import JoinServiceShow from '@/pages/Public1/ProfilePages/Volunteer/JoinServiceS
 import UsersActivities from './Volunteer/UsersActivities';
 import PendingProvider from '@/_helpers/PendingProvider';
 import VCalendar from './Volunteer/VCalendar';
+import Ticket from './Volunteer/Ticket';
 
 const ProfileRouter = () => {
     return (
@@ -40,11 +41,12 @@ const ProfileRouter = () => {
                 <Route path='pending' element={<Pending/>} />
                 <Route path='pending/upload' element={<Upload/>} />
                 <Route path='service' element={<AddService/>} />
-                <Route path='/myservice'>
+                <Route path='myservice'>
                     <Route path='index' element={<MyService/>} />
                     <Route path='edit/:id' element={<MyServiceEdit/>} />
                 </Route>
-
+                <Route path='ticket' element={<Ticket/>} />
+                
             </Route>
 
             <Route
