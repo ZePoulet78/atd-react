@@ -30,8 +30,7 @@ const CollectEdit = () => {
       collectService
         .getCollectById(id)
         .then((res) => {
-          setCollect(res.data);
-          console.log(res.data);
+          setCollect(res.data.collect);
         })
         .catch((err) => console.log(err));
     }
@@ -43,6 +42,7 @@ const CollectEdit = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log(collect);
     collectService
       .updateCollect(collect)
       .then((res) => navigate('../index'))

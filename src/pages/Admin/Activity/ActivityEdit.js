@@ -8,11 +8,8 @@ const ActivityEdit = () => {
     const [activity, setActivity] = useState([])
     const flag = useRef(false)
     let navigate = useNavigate()
-
-      
     const { id } = useParams()
-
-
+    
     const onChange = (e) => {
         setActivity({
             ...activity,
@@ -28,7 +25,9 @@ const ActivityEdit = () => {
             .then(res => {
                 navigate('../index')
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.error(err)
+            })
     }
 
     useEffect(() => {     
@@ -45,33 +44,43 @@ const ActivityEdit = () => {
     }, [])
 
     return (
-        <div className="UserEdit">
-            User Edit
-            <form onSubmit={onSubmit}>
-                <div className="group">
-                    <label htmlFor="heure_debut">Heure de debut</label>
-                    <input type="time"  name="heure_debut" value={activity.heure_debut} onChange={onChange} />
+        <div className="container d-flex justify-content-center mt-4">
+            <div className="card" style={{ maxWidth: '500px' }}>
+                <div className="card-body">
+                    <h2 className="card-title">Ajouter une activité</h2>
+                    <form onSubmit={onSubmit}>
+                        <div className="mb-3">
+                            <label htmlFor="description" className="form-label">Description</label>
+                            <input value={activity.description} type="text" className="form-control" name="description" onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="heure_debut" className="form-label">Heure de Début</label>
+                            <input value={activity.heure_debut} type="time" className="form-control" name="heure_debut" onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="heure_fin" className="form-label">Heure de Fin</label>
+                            <input value={activity.heure_fin} type="time" className="form-control" name="heure_fin" onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="date" className="form-label">Date</label>
+                            <input value={activity.date} type="date" className="form-control" name="date" onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="type" className="form-label">Type</label>
+                            <input value={activity.type} type="text" className="form-control" name="type" onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="lieu" className="form-label">Lieu</label>
+                            <input value={activity.lieu} type="text" className="form-control" name="lieu" onChange={onChange} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="max_users" className="form-label">Max. Bénévoles</label>
+                            <input value={activity.max_users} type="number" className="form-control" name="max_users" onChange={onChange} />
+                        </div>
+                        <button type="submit" className="btn btn-primary">Modifier</button>
+                    </form>
                 </div>
-                <div className="group">
-                    <label htmlFor="heure_fin">Heure de fin</label>
-                    <input type="time"   name="heure_fin" value={activity.heure_fin} onChange={onChange} />
-                </div>
-                <div className="group">
-                    <label htmlFor="date">Date</label>
-                    <input type="date" name="date" value={activity.date} onChange={onChange} />
-                </div>
-                <div className="group">
-                    <label htmlFor="type">Type</label>
-                    <input type="text" name="type" value={activity.type} onChange={onChange} />
-                </div>
-                <div className="group">
-                    <label htmlFor="description">Description</label>
-                    <input type="text" value={activity.description} name="description" onChange={onChange} />
-                </div>
-                <div className="group">
-               <button>Modifier</button>
-                </div>
-            </form>
+            </div>
         </div>
     );
 };

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { roleService } from '@/_service/role.service';
 import { userService } from '@/_service/user.service';
 
@@ -14,9 +13,7 @@ const AssignRole = ({ userId }) => {
       .indexRoles()
       .then(res => {
         setRoles(res.data.roles);
-      
         console.log(res.data.roles);
-       
         console.log(res);
         setLoading(false);
       })

@@ -119,10 +119,6 @@ const Demand = () => {
               Ajouter une demande
             </button>
           </Link>
-          <div>
-            <button onClick={notify}>Notify!</button>
-            <ToastContainer />
-          </div>
         </div>
       </div>
     </div>

@@ -13,8 +13,6 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 import {
-  PresentationChartBarIcon,
-  ShoppingBagIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/solid";
 
@@ -30,7 +28,7 @@ const ProfileSideNav = () => {
     <Card className="h-auto w-64 p-4 shadow-xl">
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
-          Menu
+          Mon Espace
         </Typography>
       </div>
       <List>
@@ -49,9 +47,20 @@ const ProfileSideNav = () => {
           </Link>
         </ListItem>
         <ListItem>
-          {/* <ListItemPrefix>
-            <ShoppingBagIcon className="h-5 w-5" />
-          </ListItemPrefix> */}
+          <ListItemPrefix>
+            <UserCircleIcon className="h-5 w-5" />
+          </ListItemPrefix>
+          <Link
+            to="/profile/volunteer/calendar"
+            className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive(
+              '/profile/volunteer/calendar',
+              location.pathname
+            )}`}
+          >
+            <FormattedMessage id="calendar" />
+          </Link>
+        </ListItem>
+        <ListItem>
           <Accordion open={openActivities} onToggle={handleOpen}>
             <AccordionHeader onClick={handleOpen}>
               <FormattedMessage id="activities" />
@@ -60,7 +69,7 @@ const ProfileSideNav = () => {
               <List>
                 <ListItem>
                   <Link
-                    to="/profile/vulnteer/activities"
+                    to="/profile/volunteer/activities"
                     className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive(
                       '/activities',
                       location.pathname
@@ -71,12 +80,12 @@ const ProfileSideNav = () => {
                 </ListItem>
                 <ListItem>
                   <Link
-                    to="/activities/participating"
+                    to="/profile/volunteer/activities/participating"
                     className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive(
                       '/activities/participating',
                       location.pathname
                     )}`}
-                  >
+                  >            
                     <FormattedMessage id="participatingActivities" />
                   </Link>
                 </ListItem>

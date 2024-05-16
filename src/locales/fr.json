@@ -17,5 +17,8 @@
     "warehouse" : "Entrepôt",
     "collects" : "Collectes",
     "profile": "Profil",
-    "participatingActivities": "Mes Activités"
+    "participatingActivities": "Mes Activités",
+    "availableActivities": "Activités disponibles",
+    "calendar": "Calendrier",
+    "demand": "Demandes"
 }

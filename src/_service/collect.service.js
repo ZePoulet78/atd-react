@@ -5,7 +5,7 @@ let getAllCollects = () => {
 }
 
 let getCollectById = (id) => {
-    return Axios.get('/collects/'+id);
+    return Axios.get('/collect/'+id);
 }
 
 let updateCollect = (collect) => {

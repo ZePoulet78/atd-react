@@ -11,7 +11,7 @@ const ALayout = () => {
                 <div className="bg-white shadow-md">
                     <SideNav/>
                 </div>
-                <div id="admin_body" className="flex-1 p-6">
+                <div id="admin_body" className="w-75">
                     <Outlet/>
                 </div>
             </div>

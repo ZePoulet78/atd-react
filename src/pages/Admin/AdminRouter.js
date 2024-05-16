@@ -40,6 +40,12 @@ import ViewDocument from '@/pages/Admin/Demand/ViewDocument.js';
 import Service from '@/pages/Admin/Service/Service.js';
 import ServiceAdd from '@/pages/Admin/Service/ServiceAdd.js';
 import ServiceEdit from '@/pages/Admin/Service/ServiceEdit.js';
+import RoadMapM from './Maraude/RoadMapM';
+import MaraudeEnt from './Maraude/MaraudeEnt';
+import MaraudeEntProd from './Maraude/MaraudeEntProd';
+import ViewMaraudProducts from './Maraude/ViewMaraudProducts';
+import MaraudeAddProd from './Maraude/MaraudeAddProd';
+import MaraudeRemoveProd from './Maraude/MaraudeRemoveProd';
 
 
 const AdminRouter = () => {
@@ -84,9 +90,17 @@ const AdminRouter = () => {
 
                 <Route path="maraude">
                     <Route path="index" element={<Maraude/>}/>
-                    <Route path="edit/:id" element={<MaraudeEdit/>}/>
                     <Route path="add" element={<MaraudeAdd/>}/>
+                    <Route path="edit/:id" element={<MaraudeEdit/>}/>
+                    <Route path="road/:id" element={<RoadMapM/>}/>
 
+                    {/*Partie entrepot maraude produits pcq je galere pitié*/}
+                    <Route path=":maraudeId/produits" element={<ViewMaraudProducts/>}/>
+                    <Route path=":maraudeId/entrepots" element={<MaraudeEnt/>}/>
+                    <Route path=":maraudeId/entrepots/:warehouseId/produits" element={<MaraudeEntProd/>}/>*
+
+                    <Route path=":maraudeId/produit/:productId/add" element={<MaraudeAddProd/>}/>
+                    <Route path=":maraudeId/produit/:productId/remove" element={<MaraudeRemoveProd/>}/>
                 </Route>
 
                 <Route path='roles'>

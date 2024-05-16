@@ -44,6 +44,21 @@ let addProductToWarehouse = (warehouseId, produit) => {
     })
 }
 
+let addProductToMaraude = (id, product) => {
+    return Axios.post('/maraude/prod/'+id, product)
+}
+
+let removeProductFromMaraude = (product, id, maraudeId) => {
+    console.log(product)
+    return Axios.delete('/maraude/prod/'+maraudeId+'/'+id, {quantity:product})
+}
+
+
+let getProduitByMaraudeId = (maraudeId) => {
+    return Axios.get(`/maraude/prod/${maraudeId}`);
+}
+
+
 
 export const StockService = {
     getAllProduit,
@@ -53,5 +68,7 @@ export const StockService = {
     addQuantityToStock,
     removeProductFromWarehouse,
     addProductToWarehouse,
-
+    addProductToMaraude,
+    removeProductFromMaraude,
+    getProduitByMaraudeId
 }

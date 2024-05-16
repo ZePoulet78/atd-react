@@ -31,6 +31,7 @@ const Login = () => {
       userService.saveUser(data.user);
       console.log(data.user)
 
+
       if(data.user.isRegsitered === 0){
         window.location.href = '/profile/pending';
       }
@@ -41,7 +42,6 @@ const Login = () => {
         window.location.href = '/';
     } catch (err) {
       const data = await err;
-      // console.log(data)
       setError(data.message);
       console.log(err.message);
     }

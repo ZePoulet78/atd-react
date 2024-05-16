@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+
 
 const AdminRoute = ({ component: Component, ...rest }) => {
   const userRole = localStorage.getItem('role');
@@ -11,7 +12,7 @@ const AdminRoute = ({ component: Component, ...rest }) => {
         userRole === '0' ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/" />
+          window.location.href = '/'
         )
       }
     />

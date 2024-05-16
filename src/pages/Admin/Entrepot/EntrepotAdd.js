@@ -29,7 +29,7 @@ const EntrepotsAdd = () => {
         <div className="container mt-4">
             <div className="card">
                 <div className="card-body">
-                    <h2 className="card-title">Entrepot Add</h2>
+                    <h2 className="card-title">Ajouter un Entrepot</h2>
                     <form onSubmit={onSubmit}>
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label">Nom</label>
