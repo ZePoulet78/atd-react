@@ -19,6 +19,10 @@ import PendingProvider from '@/_helpers/PendingProvider';
 import VCalendar from './Volunteer/VCalendar';
 import Ticket from './Volunteer/Ticket';
 
+import IndexMaraudes from './Volunteer/IndexMaraudes';
+import JoinedMaraudes from './Volunteer/JoinedMaraudes';
+
+
 const ProfileRouter = () => {
     return (
         <Routes>
@@ -32,8 +36,11 @@ const ProfileRouter = () => {
                 <Route path="show" element={<JoinServiceShow />} />
                 <Route path='activities/participating' element={<UsersActivities />} />
                 <Route path='calendar' element={<VCalendar />} />
-
+                <Route path='maraudes' element={<IndexMaraudes />} />
                 
+
+                <Route path='maraudes' element={<IndexMaraudes />} />
+                <Route path='maraudes/joined' element={<JoinedMaraudes />} />
             </Route>
 
 
@@ -42,8 +49,8 @@ const ProfileRouter = () => {
                 <Route path='pending/upload' element={<Upload/>} />
                 <Route path='service' element={<AddService/>} />
                 <Route path='myservice'>
-                    <Route path='index' element={<MyService/>} />
-                    <Route path='edit/:id' element={<MyServiceEdit/>} />
+                    <Route path='myservice/index' element={<MyService/>} />
+                    <Route path='myservice/edit/:id' element={<MyServiceEdit/>} />
                 </Route>
                 <Route path='ticket' element={<Ticket/>} />
                 

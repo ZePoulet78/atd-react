@@ -19,10 +19,15 @@ import {
 const ProfileSideNav = () => {
   const location = useLocation();
   const [openActivities, setOpenActivities] = useState(false);
+  const [openMaraudes, setOpenMaraudes] = useState(false);
 
   const handleOpen = () => {
     setOpenActivities(!openActivities);
   };
+
+  const handleOpenMaraudes = () => {
+    setOpenMaraudes(!openMaraudes);
+  }
 
   return (
     <Card className="h-auto w-64 p-4 shadow-xl">
@@ -87,6 +92,39 @@ const ProfileSideNav = () => {
                     )}`}
                   >            
                     <FormattedMessage id="participatingActivities" />
+                  </Link>
+                </ListItem>
+              </List>
+            </AccordionBody>
+          </Accordion>
+        </ListItem>
+        <ListItem>
+          <Accordion open={openMaraudes} onToggle={handleOpenMaraudes}>
+            <AccordionHeader onClick={handleOpenMaraudes}>
+              <FormattedMessage id="marauds" />
+            </AccordionHeader>
+            <AccordionBody>
+              <List>
+                <ListItem>
+                  <Link
+                    to="/profile/volunteer/maraudes"
+                    className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive(
+                      '/maraudes',
+                      location.pathname
+                    )}`}
+                  >
+                    <FormattedMessage id="availableMarauds" />
+                  </Link>
+                </ListItem>
+                <ListItem>
+                  <Link
+                    to="/profile/volunteer/maraudes/joined"
+                    className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive(
+                      '/maraudes/joined',
+                      location.pathname
+                    )}`}
+                  >            
+                    <FormattedMessage id="participatingMarauds" />
                   </Link>
                 </ListItem>
               </List>
