@@ -37,7 +37,9 @@ import CollectAdd from '@/pages/Admin/Collect/CollectAdd.js';
 import CollectEdit from '@/pages/Admin/Collect/CollectEdit.js';
 import RoadMap from '@/pages/Admin/Collect/RoadMap.js';
 import ViewDocument from '@/pages/Admin/Demand/ViewDocument.js';
-
+import Service from '@/pages/Admin/Service/Service.js';
+import ServiceAdd from '@/pages/Admin/Service/ServiceAdd.js';
+import ServiceEdit from '@/pages/Admin/Service/ServiceEdit.js';
 
 
 const AdminRouter = () => {
@@ -111,6 +113,12 @@ const AdminRouter = () => {
                     <Route path='edit/:id' element={<CollectEdit/>}/>
                     <Route path='add' element={<CollectAdd/>}/>
                     <Route path='road/:id' element={<RoadMap/>}/>
+                </Route>
+
+                <Route path='services'>
+                    <Route path='index' element={<Service/>}/>
+                    <Route path='edit/:id' element={<ServiceEdit/>}/>
+                    <Route path='add' element={<ServiceAdd/>}/>
                 </Route>
 
 

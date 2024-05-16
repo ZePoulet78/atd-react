@@ -122,6 +122,16 @@ const SideNav = () => {
             <PresentationChartBarIcon className="h-5 w-5" />
           </ListItemPrefix>
 
+          <Link to="/admin/services/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/services/index', location.pathname)}`}>
+            <FormattedMessage id='services' />
+          </Link>
+        </ListItem>
+
+        <ListItem>
+          <ListItemPrefix>
+            <PresentationChartBarIcon className="h-5 w-5" />
+          </ListItemPrefix>
+
           <Link to="/admin/collects/index" className={`block px-4 py-2 font-medium text-decoration-none text-dark ${isActive('/admin/maraude/index', location.pathname)}`}>
             <FormattedMessage id='collects' />
           </Link>

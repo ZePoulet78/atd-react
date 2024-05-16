@@ -14,9 +14,9 @@ const AssignRole = ({ userId }) => {
       .indexRoles()
       .then(res => {
         setRoles(res.data.roles);
-        console.log("caca");
+      
         console.log(res.data.roles);
-        console.log("pipi");
+       
         console.log(res);
         setLoading(false);
       })
