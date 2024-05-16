@@ -25,11 +25,20 @@ let deleteMaraude = (id) => {
     return Axios.delete('/maraudes/'+id)
 }
 
+let addRoutePlan = (routePlan, id) => {
+    return Axios.put('/maraude/'+id+'/route', {
+        itinerary:routePlan
+    })
+}
+
+
+
 export const maraudeService = {
     indexMaraude,
     updateMaraude,
     addMaraude,
     getMaraudeById,
     deleteMaraude,
+    addRoutePlan
 }
 

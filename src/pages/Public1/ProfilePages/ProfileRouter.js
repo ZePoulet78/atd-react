@@ -20,6 +20,7 @@ const ProfileRouter = () => {
                 <Route path='activities' element={<IndexActivities/>} />
                 <Route path='activities/participating' element={<UsersActivities />} />
                 <Route path='calendar' element={<VCalendar />} />
+                <Route path='*' element={<Error />} />
             </Route>
             <Route path='beneficiary' element={<BLayout />} />
             <Route
@@ -38,6 +39,7 @@ const ProfileRouter = () => {
                     </PendingProvider>
                 }
             />
+            <Route path='*' element={<Error />} />
         </Routes>
     );
 }

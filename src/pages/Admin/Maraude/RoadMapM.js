@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { collectService } from '../../../_service/collect.service';
+import { maraudeService } from '../../../_service/maraude.service';
 
-const RoadMap = () => {
+const RoadMapM = () => {
     const { id } = useParams();
     const [addresses, setAddresses] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -46,11 +46,11 @@ const RoadMap = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ addresses:addresses, collect_id:id })
+                body: JSON.stringify({ addresses:addresses, maraud_id   :id })
             });
             const data = await response.json();
             console.log(data.s3_route_html_url);
-            collectService.addRoutePlan(data.s3_route_html_url, id)
+            maraudeService.addRoutePlan(data.s3_route_html_url, id)
                 .then(res => navigate(`../index`))
                 .catch(err => console.log(err))
         } catch (error) {
@@ -106,4 +106,4 @@ const RoadMap = () => {
     );
 };
 
-export default RoadMap;
+export default RoadMapM;

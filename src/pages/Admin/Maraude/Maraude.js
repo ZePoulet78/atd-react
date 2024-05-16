@@ -78,7 +78,7 @@ const Maraude = () => {
                       
                       <td className="py-2 md:py-4 px-4 md:px-6">{maraude.user.firstname} {maraude.user.lastname}</td>
                       <td className="py-2 md:py-4 px-4 md:px-6">
-                        {maraude.plan_de_route? (
+                        {maraude.itinerary? (
                           <a href={maraude.itinerary} target="_blank" rel="noreferrer">
                             Plan de route
                           </a>
@@ -98,6 +98,11 @@ const Maraude = () => {
                         <Link to={`/admin/maraude/road/${maraude.id}`}>
                           <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 md:px-4 rounded">
                             Ajouter le plan de route
+                          </button>
+                        </Link>
+                        <Link to={`/admin/maraude/${maraude.id}/produits`}>
+                          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 md:px-4 rounded">
+                            Voir les produits
                           </button>
                         </Link>
                         <button

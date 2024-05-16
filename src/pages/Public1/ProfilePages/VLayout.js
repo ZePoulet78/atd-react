@@ -1,7 +1,6 @@
 import React from "react";
 import { Outlet } from 'react-router-dom';
 import ProfileSideNav from '@/components/ProfileSideNav.js'
-import PublicHeader from '@/components/Public/PublicHeader';
 
 
 const VLayout = () => {

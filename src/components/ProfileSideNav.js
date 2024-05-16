@@ -13,8 +13,6 @@ import {
   AccordionBody,
 } from "@material-tailwind/react";
 import {
-  PresentationChartBarIcon,
-  ShoppingBagIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/solid";
 
@@ -87,7 +85,7 @@ const ProfileSideNav = () => {
                       '/activities/participating',
                       location.pathname
                     )}`}
-                  >
+                  >            
                     <FormattedMessage id="participatingActivities" />
                   </Link>
                 </ListItem>
