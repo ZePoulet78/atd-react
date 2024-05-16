@@ -33,12 +33,47 @@ let addRoutePlan = (routePlan, id) => {
 
 
 
+let makeMaraude = (maraude) => {
+    return Axios.post('/makemaraude', maraude)
+}
+
+let indexMakeMaraude = () => {
+    return Axios.get('/makemaraude');
+}
+
+let getMakeMaraudeById = (id) => {
+    return Axios.get('/makemaraude/'+id);
+}
+
+let deleteMakeMaraude = (id) => {
+    return Axios.delete('/makemaraude/'+id)
+}
+
+let checkIfUserIsInMaraude = (id, maraude_id) => {
+    return Axios.get('/makemaraude/'+id+'/'+maraude_id)
+}
+
+let getUsersMaraudes = (id) => {
+    return Axios.get('/maraudes/user/'+id)
+}
+
+let undoMaraude = (id, maraude_id) => {
+    return Axios.delete('/makemaraude/'+id+'/'+maraude_id)
+}
+
 export const maraudeService = {
     indexMaraude,
     updateMaraude,
     addMaraude,
     getMaraudeById,
     deleteMaraude,
-    addRoutePlan
+    addRoutePlan,
+    makeMaraude,
+    indexMakeMaraude,
+    getMakeMaraudeById,
+    deleteMakeMaraude,
+    checkIfUserIsInMaraude,
+    getUsersMaraudes,
+    undoMaraude
 }
 
